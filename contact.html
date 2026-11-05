@@ -1,8 +1,907 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact — NZINC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head>
-<body><div class="utility-bar"><div class="container utility-inner"><span>Research • Conservation • Community</span><div><a href="mailto:hello@nzinc.org.np">hello@nzinc.org.np</a><span class="utility-divider">/</span><span>Nepal</span></div></div></div><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">N<span>+</span></span><span class="brand-name">NZINC<small>Research &amp; Development</small></span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Our work <i>⌄</i></a><a href="team.html">Our team</a><a class="active" href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Work with us <span>↗</span></a></nav></div></header>
-<main><section class="page-hero page-hero-contact"><div class="page-hero-bg"></div><div class="container page-hero-content"><p class="eyebrow eyebrow-light"><span></span> Get in touch</p><h1>Let’s make<br><em>good things happen.</em></h1><p>Have a research idea, a project in mind or an opportunity to collaborate? We would be glad to hear from you.</p></div></section>
-<section class="section-pad"><div class="container contact-grid"><div><p class="eyebrow"><span></span> Contact details</p><h2 class="display-heading">Start with<br><span>a hello.</span></h2><p class="lead">For partnerships, research enquiries and general questions, get in touch using the details below.</p><div class="contact-detail"><span>Email</span><a href="mailto:hello@nzinc.org.np">hello@nzinc.org.np ↗</a></div><div class="contact-detail"><span>Website</span><a href="https://nzinc.org.np/" target="_blank" rel="noopener">nzinc.org.np ↗</a></div><div class="contact-detail"><span>Location</span><p>Nepal</p></div><p class="contact-small">Please replace the sample email and location details with your organisation’s confirmed contact information before publishing.</p></div>
-<form class="contact-form" id="contactForm"><p class="eyebrow"><span></span> Send a message</p><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Name" required><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required><label for="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="What would you like to discuss?" required><label for="message">Your message</label><textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea><button class="button button-dark" type="submit">Prepare email <span>↗</span></button><p class="form-note" id="formNote">This form opens your email application with your message ready to send.</p></form></div></section>
-<section class="contact-image"></section></main>
-<footer class="site-footer"><div class="container footer-main"><a class="brand brand-footer" href="index.html"><span class="brand-mark">N<span>+</span></span><span class="brand-name">NZINC<small>Research &amp; Development</small></span></a><p class="footer-statement">Better knowledge.<br><em>Better futures.</em></p><div class="footer-links"><span>Explore</span><a href="about.html">About</a><a href="projects.html">Projects</a><a href="team.html">Our team</a><a href="contact.html">Contact</a></div><div class="footer-links"><span>Connect</span><a href="mailto:hello@nzinc.org.np">hello@nzinc.org.np</a><a href="https://nzinc.org.np/">nzinc.org.np ↗</a><span class="footer-location">Nepal</span></div></div><div class="container footer-bottom"><span>© <span id="year"></span> NZINC. All rights reserved.</span><span>Made for people and planet.</span><a href="#">Back to top ↑</a></div></footer><script src="assets/js/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Us - Nepal Zebrafish in Nature Center (NZINC)">
+  <title>Contact Us - NZINC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-blue: #1b12b2;
+      --primary-hover: #120b8a;
+      --cyan-accent: #00b4d8;
+      --cyan-light: #e6f7f9;
+      --text-dark: #111418;
+      --text-body: #4a4e54;
+      --text-muted: #73777f;
+      --bg-light: #f8f9fa;
+      --border-color: #e5e7eb;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --max-width: 1380px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      width: min(var(--max-width), calc(100% - 60px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       1. NAVIGATION BAR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1.5px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      padding: 0 30px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-right: 28px;
+      height: 100%;
+      border-right: 1.5px solid #666666;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .brand-duke-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item > a {
+      color: #2b2b2b;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-item.active > a {
+      color: var(--primary-blue);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-item.active > a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-blue);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .nav-item:hover > a {
+      color: var(--primary-blue);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e1e1e;
+      min-width: 210px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 1001;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu a {
+      color: #f1f1f1;
+      font-family: var(--font-main);
+      font-size: 14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover { color: var(--cyan-accent); }
+
+    .header-right {
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-search-btn {
+      background: transparent;
+      border: none;
+      color: var(--primary-blue);
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      padding: 8px;
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .contacts-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .contacts-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 18, 25, 0.85) 0%, rgba(20, 25, 35, 0.45) 45%, rgba(245, 175, 25, 0.6) 100%);
+    }
+
+    .contacts-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contacts-hero-dots {
+      font-size: 44px;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: 4px;
+    }
+
+    .contacts-hero h1 {
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 700;
+      font-family: var(--font-main);
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ==========================================================================
+       3. CONTACT SECTION (TWO COLUMN LAYOUT)
+       ========================================================================== */
+    .contact-main-section {
+      padding: 80px 0 60px;
+      background-color: #ffffff;
+    }
+
+    .contact-grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    /* Left Column: Get in Touch */
+    .get-in-touch-col h2 {
+      font-size: clamp(34px, 4.5vw, 48px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .get-in-touch-col p {
+      font-size: 15.5px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .info-block-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .info-block h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+    }
+
+    .info-block p, .info-block a {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.6;
+      display: block;
+    }
+
+    .info-block a:hover {
+      color: var(--cyan-accent);
+      text-decoration: underline;
+    }
+
+    .social-icons-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-badge:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-badge svg {
+      width: 16px;
+      height: 16px;
+      fill: #007b9e;
+    }
+
+    /* Right Column: Send a Message Form */
+    .send-msg-col h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+    }
+
+    .send-msg-col p.form-desc {
+      font-size: 14.5px;
+      color: var(--text-body);
+      margin-bottom: 30px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .form-group-line {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .form-group-line input, 
+    .form-group-line textarea {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 15px;
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid #cbd5e1;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group-line input:focus, 
+    .form-group-line textarea:focus {
+      border-color: var(--primary-blue);
+    }
+
+    .form-group-line textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .send-msg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border: 1.5px solid var(--primary-blue);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--primary-blue);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .send-msg-btn:hover {
+      background-color: var(--primary-blue);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(27, 18, 178, 0.25);
+    }
+
+    /* ==========================================================================
+       4. MAP EMBED SECTION
+       ========================================================================== */
+    .map-section {
+      padding: 20px 0 80px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ==========================================================================
+       5. SUPPORT BANNER ("Everyone can help!")
+       ========================================================================== */
+    .support-donate-banner {
+      background-color: #212322;
+      color: #ffffff;
+      padding: 90px 0;
+    }
+
+    .support-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .support-heading-text {
+      font-size: clamp(40px, 6vw, 90px);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .support-heading-text .styled-help {
+      background: linear-gradient(90deg, #ffb2cc 0%, #79b0ff 33%, #f3cf7a 66%, #85e8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
+    }
+
+    .donate-oval-btn {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1.5px solid #e0a526;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .donate-oval-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       6. MULTI-COLUMN THEME FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: #ffffff;
+      color: #222222;
+      padding: 22px 0 10px;
+      font-family: var(--font-main);
+    }
+
+    .footer-grid-multi {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .footer-col-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col-brand p.sub-org {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact-info a {
+      color: #007b9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-contact-info a:hover {
+      color: #005b78;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .social-icon-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: #007b9e;
+    }
+
+    .footer-column h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #dddddd;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #007b9e;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #444444;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .contact-grid-2 { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid-multi { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .footer-col-brand { grid-column: span 3; }
+    }
+
+    @media (max-width: 768px) {
+      .info-block-grid { grid-template-columns: 1fr; gap: 20px; }
+      .support-banner-inner { flex-direction: column; text-align: center; }
+      .footer-grid-multi { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }
+      .footer-col-brand { grid-column: span 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     1. NAVIGATION BAR
+     ========================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logo-wrap">
+          <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
+          <span class="brand-title">NZINC</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item">
+          <a href="about.html">About Us <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="about.html#vision">Our Vision</a>
+            <a href="about.html#mission">Mission</a>
+            <a href="about.html#why-community">Why Community?</a>
+            <a href="about.html#target-group">Target Group</a>
+            <a href="about.html#sdgs">SDG Goals</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="projects.html">Our Work <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="projects.html#initiatives">Initiatives</a>
+            <a href="projects.html#completed">Completed Projects</a>
+            <a href="projects.html#partnerships">Partnership List</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="partners.html">Partners <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="partners.html#partners">Partners</a>
+            <a href="partners.html#donors">Donors</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="resources.html">Resources <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="resources.html#publications">Publications</a>
+            <a href="resources.html#media">Media Library</a>
+          </div>
+        </div>
+        <div class="nav-item active">
+          <a href="contact.html">Get Involved <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Become a Volunteer</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <button class="nav-search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       2. HERO SECTION
+       ========================================================================== -->
+    <section class="contacts-hero">
+      <div class="contacts-hero-overlay"></div>
+      <div class="container contacts-hero-content">
+        <span class="contacts-hero-dots">••</span>
+        <h1>Contacts</h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. CONTACT SECTION (TWO COLUMN)
+       ========================================================================== -->
+    <section class="contact-main-section">
+      <div class="container contact-grid-2">
+        
+        <!-- Left Column -->
+        <div class="get-in-touch-col">
+          <h2>Get in touch</h2>
+          <p>
+            At NZINC, we value your thoughts, questions, and suggestions. Whether you’re looking to collaborate, volunteer, or learn more about our work, we’re here to connect with you.
+          </p>
+          <p>
+            You can also reach out to us through our <a href="#" style="color: var(--cyan-accent); font-weight: 600;">social media channels</a> or use the contact form. Together, let’s make a difference!
+          </p>
+
+          <div class="info-block-grid">
+            <div class="info-block">
+              <h3>Bharatpur, Nepal</h3>
+              <p>Bharatpur-7</p>
+              <p>Chitwan, Nepal</p>
+            </div>
+            <div class="info-block">
+              <h3>Email</h3>
+              <a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a>
+              <h3 style="margin-top: 16px;">Social</h3>
+              <div class="social-icons-row">
+                <a href="#" class="social-badge" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" class="social-badge" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="#" class="social-badge" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Send a Message Form -->
+        <div class="send-msg-col">
+          <h2>Send a message</h2>
+          <p class="form-desc">Please use the form below. You’ll typically receive a response within six business days.</p>
+
+          <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group-line">
+              <input type="text" id="senderName" placeholder="Full Name *" required>
+            </div>
+            <div class="form-group-line">
+              <input type="email" id="senderEmail" placeholder="Email Address *" required>
+            </div>
+            <div class="form-group-line">
+              <input type="text" id="senderSubject" placeholder="Subject">
+            </div>
+            <div class="form-group-line">
+              <textarea id="senderMessage" placeholder="Message *" required></textarea>
+            </div>
+            <button type="submit" class="send-msg-btn">
+              Send message ↗
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. MAP SECTION
+       ========================================================================== -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.45424564887!2d84.428!3d27.682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQ0JzU5LjIiTiA4NMKwMjUnNDguOCJF!5e0!3m2!1sen!2snp!4v1600000000000!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. SUPPORT BANNER
+       ========================================================================== -->
+    <section class="support-donate-banner">
+      <div class="container support-banner-inner">
+        <h2 class="support-heading-text">
+          Everyone <span class="styled-help">can help!</span>
+        </h2>
+        <a href="donate.html" class="donate-oval-btn">
+          Donate
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+     6. MULTI-COLUMN THEME FOOTER
+     ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-multi">
+        
+        <!-- Col 1: Brand, Address, Email & Socials -->
+        <div class="footer-col-brand">
+          <h3>NZINC</h3>
+          <p class="sub-org">Nepal Zebrafish in Nature Center</p>
+          <div class="footer-contact-info">
+            <span>📍 Bharatpur-7, Chitwan, Nepal</span>
+            <span>✉️ <a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-icon-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: About -->
+        <div class="footer-column">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#vision">Our Vision</a></li>
+            <li><a href="about.html#mission">Mission</a></li>
+            <li><a href="about.html#why-community">Why Community?</a></li>
+            <li><a href="about.html#target-group">Target Group</a></li>
+            <li><a href="about.html#sdgs">SDG Goals</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Work -->
+        <div class="footer-column">
+          <h4>Our Work</h4>
+          <ul>
+            <li><a href="projects.html#initiatives">Initiatives</a></li>
+            <li><a href="projects.html#completed">Completed Projects</a></li>
+            <li><a href="projects.html#partnerships">Partnership List</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Partners -->
+        <div class="footer-column">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="partners.html#partners">Partners &amp; Collaborators</a></li>
+            <li><a href="partners.html#donors">Donors</a></li>
+            <li><a href="partners.html#affiliations">Affiliations</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Support -->
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Become a Volunteer</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
+        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FORM SCRIPT -->
+  <script>
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const subject = document.getElementById('senderSubject').value || 'Contact Inquiry';
+      const message = document.getElementById('senderMessage').value;
+
+      const recipient = "nzincnepal@gmail.com";
+      const mailSubject = encodeURIComponent(`${subject} - from ${name}`);
+      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+      window.location.href = `mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`;
+    }
+  </script>
+</body>
+</html>

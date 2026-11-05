@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Become a Volunteer - Nepal Zebrafish in Nature Center (NZINC)">
+  <title>Become a Volunteer - NZINC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --primary-blue: #1b12b2;
+      --primary-hover: #120b8a;
+      --cyan-accent: #00b4d8;
+      --cyan-light: #e6f7f9;
+      --text-dark: #111418;
+      --text-body: #4a4e54;
+      --text-muted: #73777f;
+      --bg-light: #f8f9fa;
+      --border-color: #e5e7eb;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --max-width: 1380px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      width: min(var(--max-width), calc(100% - 60px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       1. NAVIGATION BAR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1.5px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      padding: 0 30px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-right: 28px;
+      height: 100%;
+      border-right: 1.5px solid #666666;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .brand-duke-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item > a {
+      color: #2b2b2b;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-item.active > a {
+      color: var(--primary-blue);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-item.active > a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-blue);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .nav-item:hover > a {
+      color: var(--primary-blue);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e1e1e;
+      min-width: 210px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 1001;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu a {
+      color: #f1f1f1;
+      font-family: var(--font-main);
+      font-size: 14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover { color: var(--cyan-accent); }
+
+    .header-right {
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-search-btn {
+      background: transparent;
+      border: none;
+      color: var(--primary-blue);
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      padding: 8px;
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .volunteer-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .volunteer-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 18, 25, 0.85) 0%, rgba(20, 25, 35, 0.5) 45%, rgba(0, 180, 216, 0.65) 100%);
+    }
+
+    .volunteer-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .volunteer-hero-dots {
+      font-size: 44px;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: 4px;
+    }
+
+    .volunteer-hero h1 {
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 700;
+      font-family: var(--font-main);
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ==========================================================================
+       3. TYPOGRAPHIC INTRO BANNER ("Become a volunteer")
+       ========================================================================== */
+    .intro-typography-section {
+      padding: 80px 0 60px;
+      background-color: #ffffff;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .large-typo-title {
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .large-typo-title .word-become {
+      background: linear-gradient(90deg, #00b4d8 0%, #1b12b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .large-typo-title .word-volunteer {
+      color: var(--text-dark);
+      display: block;
+      margin-top: 4px;
+    }
+
+    .intro-body-text {
+      font-size: 16.5px;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       4. STATS & WATERMARK BANNER ("Our Volunteers team members 20+")
+       ========================================================================== */
+    .stats-watermark-section {
+      padding: 70px 0 90px;
+      background-color: #f8fafc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-kicker {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .section-kicker::before {
+      content: "°°";
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+    .stats-main-heading {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.15;
+    }
+
+    .pill-join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 28px;
+      border: 1.5px solid var(--primary-blue);
+      border-radius: 50px;
+      color: var(--primary-blue);
+      font-size: 15px;
+      font-weight: 600;
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+
+    .pill-join-btn:hover {
+      background-color: var(--primary-blue);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .stat-number-box {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-big-num {
+      font-size: clamp(60px, 9vw, 130px);
+      font-weight: 300;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--cyan-accent);
+      line-height: 0.9;
+    }
+
+    .stat-vertical-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 0.05em;
+    }
+
+    .watermark-bg-text {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(80px, 16vw, 240px);
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(27, 18, 178, 0.08);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 1;
+      letter-spacing: -0.04em;
+    }
+
+    /* ==========================================================================
+       5. WHY VOLUNTEER & BENEFITS SECTION
+       ========================================================================== */
+    .why-volunteer-section {
+      padding: 90px 0;
+      background-color: #ffffff;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .why-left-col h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .why-left-col h3.sub-tagline {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+    }
+
+    .why-desc {
+      font-size: 15.5px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .why-right-col h3.call-voice {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 14px;
+    }
+
+    .why-right-col p.form-note {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    .checklist-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .check-circle-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--text-dark);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .check-circle-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--text-dark);
+      stroke-width: 3;
+    }
+
+    .check-item-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary-blue);
+    }
+
+    /* Custom Volunteer Mosaic Frame */
+    .mosaic-photo-strip {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      height: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .mosaic-photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .mosaic-photo-strip img:hover {
+      transform: scale(1.08);
+    }
+
+    /* ==========================================================================
+       6. SUPPORT BANNER ("Everyone can help!")
+       ========================================================================== */
+    .support-donate-banner {
+      background-color: #212322;
+      color: #ffffff;
+      padding: 90px 0;
+    }
+
+    .support-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .support-heading-text {
+      font-size: clamp(40px, 6vw, 90px);
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .support-heading-text .styled-help {
+      background: linear-gradient(90deg, #ffb2cc 0%, #79b0ff 33%, #f3cf7a 66%, #85e8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
+    }
+
+    .donate-oval-btn {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1.5px solid #e0a526;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .donate-oval-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       7. MULTI-COLUMN THEME FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: #ffffff;
+      color: #222222;
+      padding: 22px 0 10px;
+      font-family: var(--font-main);
+    }
+
+    .footer-grid-multi {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .footer-col-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col-brand p.sub-org {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact-info a {
+      color: #007b9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-contact-info a:hover {
+      color: #005b78;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .social-icon-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: #007b9e;
+    }
+
+    .footer-column h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #dddddd;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #007b9e;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #444444;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .intro-grid, .why-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-grid-multi { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .footer-col-brand { grid-column: span 3; }
+      .mosaic-photo-strip { grid-template-columns: repeat(4, 1fr); height: 200px; }
+    }
+
+    @media (max-width: 768px) {
+      .support-banner-inner { flex-direction: column; text-align: center; }
+      .footer-grid-multi { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }
+      .footer-col-brand { grid-column: span 2; }
+      .mosaic-photo-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     1. NAVIGATION BAR
+     ========================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-section">
+        <div class="brand-logo-wrap">
+          <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
+          <span class="brand-title">NZINC</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item">
+          <a href="about.html">About Us <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="about.html#vision">Our Vision</a>
+            <a href="about.html#mission">Mission</a>
+            <a href="about.html#why-community">Why Community?</a>
+            <a href="about.html#target-group">Target Group</a>
+            <a href="about.html#sdgs">SDG Goals</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="projects.html">Our Work <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="projects.html#initiatives">Initiatives</a>
+            <a href="projects.html#completed">Completed Projects</a>
+            <a href="projects.html#partnerships">Partnership List</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="partners.html">Partners <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="partners.html#partners">Partners</a>
+            <a href="partners.html#donors">Donors</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="resources.html">Resources <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="resources.html#publications">Publications</a>
+            <a href="resources.html#media">Media Library</a>
+          </div>
+        </div>
+        <div class="nav-item active">
+          <a href="contact.html">Get Involved <span>⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Become a Volunteer</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <button class="nav-search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       2. HERO BANNER
+       ========================================================================== -->
+    <section class="volunteer-hero">
+      <div class="volunteer-hero-overlay"></div>
+      <div class="container volunteer-hero-content">
+        <span class="volunteer-hero-dots">••</span>
+        <h1>Become a volunteer</h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. INTRO TYPOGRAPHY SECTION
+       ========================================================================== -->
+    <section class="intro-typography-section">
+      <div class="container intro-grid">
+        <h2 class="large-typo-title">
+          <span class="word-become">Become</span>
+          <span class="word-volunteer">a volunteer</span>
+        </h2>
+        <div>
+          <p class="intro-body-text">
+            Volunteering with the Nepal Zebrafish in Nature Center (NZINC) means directly driving community empowerment and aquatic biodiversity protection. As a volunteer, you will contribute your skills across nature restoration, educational outreach, river basin field research, and sustainable livelihood programs across Nepal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. STATS & WATERMARK BANNER
+       ========================================================================== -->
+    <section class="stats-watermark-section">
+      <div class="container">
+        <div class="stats-header-row">
+          <div>
+            <p class="section-kicker">Team</p>
+            <h2 class="stats-main-heading">Our Volunteers<br>team members</h2>
+          </div>
+          <div>
+            <a href="contact.html" class="pill-join-btn">Join us ↗</a>
+          </div>
+          <div class="stat-number-box">
+            <span class="stat-big-num">20+</span>
+            <span class="stat-vertical-label">Team members</span>
+          </div>
+        </div>
+      </div>
+      <div class="watermark-bg-text">weneedyourhelp</div>
+    </section>
+
+    <!-- ==========================================================================
+       5. WHY VOLUNTEER & BENEFITS
+       ========================================================================== -->
+    <section class="why-volunteer-section">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-left-col">
+            <p class="section-kicker">Become a volunteer now</p>
+            <h2>Why Volunteer at NZINC?</h2>
+            <h3 class="sub-tagline">Make a Difference with NZINC</h3>
+            <p class="why-desc">
+              Joining NZINC connects you with a passionate team working tirelessly to safeguard freshwater ecosystems and foster community resilience. Your time directly powers critical field initiatives and environmental education.
+            </p>
+            <p class="why-desc">
+              Gain practical experience in social development, biodiversity research, and grassroots action while collaborating with dedicated experts.
+            </p>
+
+            <div class="checklist-group">
+              <div class="check-item">
+                <div class="check-circle-icon"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <span class="check-item-text">Connect with professional volunteers and researchers worldwide.</span>
+              </div>
+              <div class="check-item">
+                <div class="check-circle-icon"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <span class="check-item-text">Help riverbank communities enhance their environmental quality of life.</span>
+              </div>
+              <div class="check-item">
+                <div class="check-circle-icon"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <span class="check-item-text">Broaden your field research and project management skill set.</span>
+              </div>
+              <div class="check-item">
+                <div class="check-circle-icon"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <span class="check-item-text">Be part of vital nature restoration and ecological preservation initiatives.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-right-col">
+            <h3 class="call-voice">We need your voice, join us!</h3>
+            <p class="form-note">
+              Get in touch to join our upcoming field programs. Our team typically responds within six business days.
+            </p>
+
+            <!-- Volunteer Photo Strip Collage -->
+            <div class="mosaic-photo-strip">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Volunteers working together">
+              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" alt="Community field project">
+              <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=400&q=80" alt="Field research team">
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=400&q=80" alt="Volunteer nature team">
+              <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=400&q=80" alt="Restoration work">
+              <img src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=400&q=80" alt="Youth volunteers">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80" alt="Community action">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       6. SUPPORT BANNER ("Everyone can help!")
+       ========================================================================== -->
+    <section class="support-donate-banner">
+      <div class="container support-banner-inner">
+        <h2 class="support-heading-text">
+          Everyone <span class="styled-help">can help!</span>
+        </h2>
+        <a href="donate.html" class="donate-oval-btn">
+          Donate
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+     7. MULTI-COLUMN THEME FOOTER
+     ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-multi">
+        
+        <!-- Col 1: Brand, Address, Email & Socials -->
+        <div class="footer-col-brand">
+          <h3>NZINC</h3>
+          <p class="sub-org">Nepal Zebrafish in Nature Center</p>
+          <div class="footer-contact-info">
+            <span>📍 Bharatpur-7, Chitwan, Nepal</span>
+            <span>✉️ <a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-icon-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: About -->
+        <div class="footer-column">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html#vision">Our Vision</a></li>
+            <li><a href="about.html#mission">Mission</a></li>
+            <li><a href="about.html#why-community">Why Community?</a></li>
+            <li><a href="about.html#target-group">Target Group</a></li>
+            <li><a href="about.html#sdgs">SDG Goals</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Work -->
+        <div class="footer-column">
+          <h4>Our Work</h4>
+          <ul>
+            <li><a href="projects.html#initiatives">Initiatives</a></li>
+            <li><a href="projects.html#completed">Completed Projects</a></li>
+            <li><a href="projects.html#partnerships">Partnership List</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Partners -->
+        <div class="footer-column">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="partners.html#partners">Partners &amp; Collaborators</a></li>
+            <li><a href="partners.html#donors">Donors</a></li>
+            <li><a href="partners.html#affiliations">Affiliations</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Support -->
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Become a Volunteer</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
+        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
