@@ -133,7 +133,6 @@
       height: 100%;
       padding: 0 4px;
       transition: color 0.2s ease;
-
     }
 
     .nav-item.active > a {
@@ -214,6 +213,7 @@
       padding-left: 20px;
       display: flex;
       align-items: center;
+      gap: 16px;
     }
 
     .nav-search-btn {
@@ -226,6 +226,20 @@
       align-items: center;
       justify-content: center;
       padding: 8px;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--primary-blue);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
     }
 
     /* ==========================================================================
@@ -610,7 +624,6 @@
       justify-content: center;
     }
 
-    /* SVG Canvas Styling */
     .sdg-svg {
       width: 520px;
       height: 520px;
@@ -627,7 +640,6 @@
       filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
     }
 
-    /* Center Badge */
     .sdg-center-badge {
       position: absolute;
       width: 190px;
@@ -666,7 +678,6 @@
       margin-top: 4px;
     }
 
-    /* Callout Data Labels around the wheel */
     .sdg-callout {
       position: absolute;
       font-size: 11px;
@@ -679,13 +690,6 @@
       pointer-events: none;
     }
 
-    .sdg-callout .pointer-line {
-      height: 1px;
-      background: #ccc;
-      flex-shrink: 0;
-    }
-
-    /* Specific Callout Positions */
     .c-top-right-1 { top: 30px; right: 180px; color: #e5243b; text-align: left; }
     .c-top-right-2 { top: 110px; right: 80px; color: #dda63a; text-align: left; }
     .c-mid-right-1 { top: 220px; right: 40px; color: #4c9f38; text-align: left; }
@@ -702,7 +706,6 @@
     .c-top-left-1 { top: 120px; left: 80px; color: #56c02b; text-align: right; }
     .c-top-left-2 { top: 40px; left: 170px; color: #00689d; text-align: right; }
 
-    /* Modal / Tooltip for SDG click */
     .sdg-info-box {
       margin-top: 20px;
       padding: 16px 28px;
@@ -858,7 +861,7 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE DESIGN
+       RESPONSIVE DESIGN (INCLUDING MOBILE MENU DRAWER)
        ========================================================================== */
     @media (max-width: 1100px) {
       .target-cards-grid {
@@ -882,13 +885,6 @@
         margin-top: 10px;
         text-align: left !important;
       }
-      .sdg-callouts-mobile {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-top: 30px;
-        width: 100%;
-      }
     }
 
     @media (max-width: 900px) {
@@ -902,13 +898,83 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .container { width: calc(100% - 32px); }
-      .header-inner { padding: 0 16px; }
-      .nav-links { display: none; }
+      .header-inner { justify-content: space-between; padding: 0 16px; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      /* Mobile Menu Drawer Layout */
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 17px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
       .target-cards-grid { grid-template-columns: 1fr; }
       .why-community-grid { grid-template-columns: 1fr; }
-      .sdg-callouts-mobile { grid-template-columns: 1fr; }
       .footer-top { flex-direction: column; align-items: flex-start; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
       .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
@@ -924,20 +990,19 @@
     <div class="header-inner">
       <a href="index.html" class="brand-section" aria-label="Go to Home">
         <div class="brand-logo-wrap">
-          <!-- Duke/NZINC Logo -->
           <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
           <span class="brand-title">NZINC</span>
         </div>
       </a>
       
-      <nav class="nav-links" aria-label="Main Menu">
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
         <div class="nav-item">
           <a href="index.html">Home</a>
         </div>
 
         <!-- Active Page -->
         <div class="nav-item active">
-          <a href="about.html">About Us <span class="arrow">⌄</span></a>
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="about.html#vision">Our Vision</a>
             <a href="about.html#mission">Mission</a>
@@ -948,7 +1013,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="projects.html">Our Work <span class="arrow">⌄</span></a>
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="projects.html#focus-areas">Focus Areas</a>
             <a href="projects.html#projects">Projects</a>
@@ -957,7 +1022,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="partners.html">Partners <span class="arrow">⌄</span></a>
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
@@ -965,7 +1030,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="resources.html">Resources <span class="arrow">⌄</span></a>
+          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="resources.html#publications">Publications</a>
             <a href="resources.html#media">Media Library</a>
@@ -973,7 +1038,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="contact.html">Get Involved <span class="arrow">⌄</span></a>
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="donate.html">Donate</a>
             <a href="contact.html#volunteer">Become a Volunteer</a>
@@ -987,6 +1052,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
       </div>
@@ -1010,7 +1082,6 @@
        ========================================================================== -->
     <section class="vision-section" id="vision">
       <div class="container vision-grid">
-        <!-- Outline Stats Left -->
         <div class="stats-container">
           <div class="stat-box">
             <div class="stat-number-outline">25+</div>
@@ -1022,7 +1093,6 @@
           </div>
         </div>
 
-        <!-- Vision Content Right -->
         <div>
           <p class="section-kicker">About foundation</p>
           <h2 class="vision-title">Our Vision :</h2>
@@ -1052,7 +1122,6 @@
           </p>
         </div>
 
-        <!-- Video Banner Right -->
         <div class="mission-video-wrap">
           <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80" alt="Community Foundation Work" class="mission-video-img">
           <button class="play-video-btn" onclick="alert('Playing Foundation Documentary Video...');">
@@ -1073,7 +1142,6 @@
         </div>
 
         <div class="why-community-grid">
-          <!-- Column 1 -->
           <div class="why-card">
             <div>
               <h3 class="why-card-title">Empowering Local Solutions</h3>
@@ -1081,7 +1149,6 @@
                 Communities best understand their challenges. Supporting them fosters localized, sustainable solutions that address their unique needs effectively.
               </p>
             </div>
-            <!-- Hexagon Icon -->
             <div class="why-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff7a00" stroke-width="2">
                 <path d="M12 2l8.5 4.9v9.8L12 21.6l-8.5-4.9V6.9L12 2z"/>
@@ -1089,7 +1156,6 @@
             </div>
           </div>
 
-          <!-- Column 2 -->
           <div class="why-card">
             <div>
               <h3 class="why-card-title">Building Resilience</h3>
@@ -1097,7 +1163,6 @@
                 Strong communities can adapt to adversity, recover from setbacks, and sustain growth, ensuring long-term stability and progress.
               </p>
             </div>
-            <!-- Lightbulb Icon -->
             <div class="why-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e0a526" stroke-width="2">
                 <path d="M9 18h6m-3 3v-3m-4-2.5a6 6 0 118 0c-1 1-1.5 2-1.5 3.5h-5c0-1.5-.5-2.5-1.5-3.5z"/>
@@ -1105,7 +1170,6 @@
             </div>
           </div>
 
-          <!-- Column 3 -->
           <div class="why-card">
             <div>
               <h3 class="why-card-title">Reducing Inequality</h3>
@@ -1113,7 +1177,6 @@
                 Community support bridges gaps in access to education, healthcare, and resources, promoting equal opportunities for all members.
               </p>
             </div>
-            <!-- Water Drop Icon -->
             <div class="why-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2">
                 <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
@@ -1121,7 +1184,6 @@
             </div>
           </div>
 
-          <!-- Column 4 -->
           <div class="why-card">
             <div>
               <h3 class="why-card-title">Fostering Collaboration</h3>
@@ -1129,7 +1191,6 @@
                 Encouraging community-led initiatives strengthens bonds among individuals, fostering unity, trust, and shared responsibility for growth.
               </p>
             </div>
-            <!-- Tree Icon -->
             <div class="why-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2">
                 <path d="M12 2L5 12h4l-3 6h12l-3-6h4L12 2zM12 18v4"/>
@@ -1160,9 +1221,7 @@
           </div>
         </div>
 
-        <!-- 5 Columns Grid -->
         <div class="target-cards-grid">
-          <!-- Women -->
           <div class="target-card">
             <div class="target-icon">
               <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#ff7a00" stroke-width="1.8">
@@ -1175,7 +1234,6 @@
             </p>
           </div>
 
-          <!-- Seniors -->
           <div class="target-card">
             <div class="target-icon">
               <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#e0a526" stroke-width="1.8">
@@ -1188,7 +1246,6 @@
             </p>
           </div>
 
-          <!-- Discriminated People -->
           <div class="target-card">
             <div class="target-icon">
               <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="1.8">
@@ -1201,7 +1258,6 @@
             </p>
           </div>
 
-          <!-- Youth -->
           <div class="target-card">
             <div class="target-icon">
               <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="1.8">
@@ -1214,7 +1270,6 @@
             </p>
           </div>
 
-          <!-- Children -->
           <div class="target-card">
             <div class="target-icon">
               <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#3a86ff" stroke-width="1.8">
@@ -1237,9 +1292,7 @@
       <div class="container sdg-container">
         
         <div class="sdg-wheel-wrapper">
-          <!-- Center UN/NZINC Badge -->
           <div class="sdg-center-badge">
-            <!-- UN Symbol SVG -->
             <svg width="42" height="42" viewBox="0 0 100 100" fill="#0077b6">
               <circle cx="50" cy="50" r="45" fill="none" stroke="#0077b6" stroke-width="3"/>
               <circle cx="50" cy="50" r="30" fill="none" stroke="#0077b6" stroke-width="2"/>
@@ -1251,12 +1304,8 @@
             <div class="sdg-nzinc-sub">NZINC 2026</div>
           </div>
 
-          <!-- SVG 17 Segment SDG Wheel -->
-          <svg class="sdg-svg" viewBox="0 0 500 500" id="sdgWheel">
-            <!-- JS will inject the 17 segments dynamically with standard UN SDG colors -->
-          </svg>
+          <svg class="sdg-svg" viewBox="0 0 500 500" id="sdgWheel"></svg>
 
-          <!-- Floating Data Labels around the Wheel (Exact screenshot data) -->
           <div class="sdg-callout c-top-right-1">485698 HOUSEHOLDS AND 2 MILLION PEOPLE</div>
           <div class="sdg-callout c-top-right-2">460 RURAL COOPS. &amp; 1500 BILLION CAPITAL GENERATE</div>
           <div class="sdg-callout c-mid-right-1">EDUCATION: 150 HHS</div>
@@ -1274,7 +1323,6 @@
           <div class="sdg-callout c-top-left-2">RED TIKA MOVEMENT: 100 HHS</div>
         </div>
 
-        <!-- Interactive Info Box -->
         <div class="sdg-info-box" id="sdgInfoBox">
           Hover over or click any SDG segment to view NZINC's targeted community contributions.
         </div>
@@ -1338,15 +1386,36 @@
     </div>
   </footer>
 
-  <!-- Dynamic SVG SDG Wheel Generator Script -->
+  <!-- Scripts: SDG Wheel + Mobile Navigation Toggle -->
   <script>
+    // 1. Mobile Menu Toggle Script
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+
+    // 2. SDG Wheel Generator Script
     document.addEventListener("DOMContentLoaded", function () {
       const svg = document.getElementById("sdgWheel");
       const infoBox = document.getElementById("sdgInfoBox");
       const numSegments = 17;
       const cx = 250, cy = 250, rOuter = 240, rInner = 110;
 
-      // 17 Official SDG Colors
       const sdgColors = [
         "#E5243B", "#DDA63A", "#4C9F38", "#C5192D", "#FF3A21",
         "#26BDE2", "#FCC30B", "#A21942", "#FD6925", "#DD1367",
@@ -1380,7 +1449,6 @@
         const startAngle = i * angleStep;
         const endAngle = (i + 1) * angleStep;
 
-        // Calculate arc coordinates
         const x1Outer = cx + rOuter * Math.cos(startAngle);
         const y1Outer = cy + rOuter * Math.sin(startAngle);
         const x2Outer = cx + rOuter * Math.cos(endAngle);
@@ -1405,7 +1473,6 @@
         path.setAttribute("fill", sdgColors[i]);
         path.setAttribute("class", "sdg-segment");
 
-        // Hover effect to display details in infoBox
         path.addEventListener("mouseenter", function () {
           infoBox.innerHTML = `<strong>Goal ${i + 1}:</strong> ${sdgLabels[i]}`;
           infoBox.style.color = sdgColors[i];

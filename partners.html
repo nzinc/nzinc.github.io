@@ -137,7 +137,6 @@
 
     .nav-item:hover > a { color: #1b12b2; }
 
-    /* Active Indicator for Partners Page */
     .nav-item.active > a {
       color: #1b12b2;
       font-weight: 700;
@@ -207,6 +206,7 @@
       padding: 0 35px;
       display: flex;
       align-items: center;
+      gap: 16px;
     }
 
     .nav-search-btn {
@@ -220,8 +220,22 @@
       justify-content: center;
     }
 
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--primary-blue);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
     /* ==========================================================================
-       HERO BANNER (MATCHING OVERVIEW STRUCTURE)
+       HERO BANNER SECTION
        ========================================================================== */
     .partners-main-hero {
       position: relative;
@@ -336,7 +350,7 @@
     }
 
     /* ==========================================================================
-       2. PARTNERS LOGO GRID (CIRCULAR AVATARS AS IN REFERENCE CODE)
+       2. PARTNERS LOGO GRID
        ========================================================================== */
     .logo-grid-section {
       padding: 60px 0 100px;
@@ -678,7 +692,7 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE DESIGN
+       RESPONSIVE DESIGN (INCLUDING MOBILE MENU DRAWER)
        ========================================================================== */
     @media (max-width: 992px) {
       .container { width: calc(100% - 40px); }
@@ -694,7 +708,79 @@
 
     @media (max-width: 768px) {
       .container { width: calc(100% - 32px); }
-      .nav-links { display: none; }
+      .header-inner { justify-content: space-between; padding: 0 16px; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      /* Mobile Menu Drawer Layout */
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 17px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
       .partners-main-hero { height: 260px; padding-bottom: 40px; }
       .partners-grid-exact { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
       .partner-icon-avatar { width: 100px; height: 100px; }
@@ -720,13 +806,13 @@
         </div>
       </a>
       
-      <nav class="nav-links" aria-label="Main Menu">
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
         <div class="nav-item">
           <a href="index.html">Home</a>
         </div>
 
         <div class="nav-item">
-          <a href="about.html">About Us <span class="arrow">⌄</span></a>
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="about.html#who-we-are">Who are we?</a>
             <a href="about.html#mission">Our Mission</a>
@@ -736,7 +822,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="projects.html">Our Work <span class="arrow">⌄</span></a>
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="projects.html#focus-areas">Focus Areas</a>
             <a href="projects.html#projects">Projects</a>
@@ -746,7 +832,7 @@
         </div>
 
         <div class="nav-item active">
-          <a href="partners.html">Partners <span class="arrow">⌄</span></a>
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
@@ -755,7 +841,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="resources.html">Resources <span class="arrow">⌄</span></a>
+          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="resources.html#publications">Publications</a>
             <a href="resources.html#media">Media Library</a>
@@ -765,7 +851,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="contact.html">Get Involved <span class="arrow">⌄</span></a>
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="donate.html">Donate</a>
             <a href="contact.html#volunteer">Become a Volunteer</a>
@@ -780,6 +866,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
       </div>
@@ -825,42 +918,36 @@
     </section>
 
     <!-- ==========================================================================
-       2. PARTNERS LOGO GRID (CIRCULAR AVATARS WITH REAL IMAGE PATHS)
+       2. PARTNERS LOGO GRID
        ========================================================================== -->
     <section class="logo-grid-section">
       <div class="container">
         <div class="partners-grid-exact">
-          <!-- Duke University -->
           <div class="partner-item-avatar">
             <img src="Image/duke.jfif" alt="DUKE University" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">DUKE University, USA</span>
           </div>
 
-          <!-- University of Oregon -->
           <div class="partner-item-avatar">
             <img src="Image/Oregon-University-Logo.png" alt="University of Oregon" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">University of Oregon, USA</span>
           </div>
 
-          <!-- AFU -->
           <div class="partner-item-avatar">
             <img src="Image/AFU.png" alt="Agriculture and Forestry University" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">Agriculture &amp; Forestry University, Nepal</span>
           </div>
 
-          <!-- Mid-West University -->
           <div class="partner-item-avatar">
             <img src="Image/MidWestUniversity_logo.png" alt="Mid-West University" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">Mid-West University, Nepal</span>
           </div>
 
-          <!-- Far-West University -->
           <div class="partner-item-avatar">
             <img src="Image/farwestern.png" alt="Far-West University" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">Far-West University, Nepal</span>
           </div>
 
-          <!-- Bharatpur Municipality -->
           <div class="partner-item-avatar">
             <img src="Image/bharatpur.png" alt="Bharatpur Municipality" class="partner-icon-avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=300&q=80';">
             <span class="partner-name-text">Bharatpur Municipality</span>
@@ -1003,5 +1090,27 @@
     </div>
   </footer>
 
+  <!-- Script: Mobile Navigation Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

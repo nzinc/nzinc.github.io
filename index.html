@@ -194,11 +194,12 @@
       color: #00b4d8;
     }
 
-    /* Right Search Button */
+    /* Right Search & Mobile Toggle Controls */
     .header-right {
-      padding: 0 35px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
+      gap: 16px;
     }
 
     .nav-search-btn {
@@ -210,6 +211,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--primary-blue);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
     }
 
     /* ==========================================================================
@@ -556,7 +571,6 @@
     .volunteer-section {
       padding: 140px 0;
       background-color: #ffffff;
-      /* Topographic fluid line SVG background */
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Cg fill='none' stroke='%238ee5ee' stroke-width='1.5' stroke-opacity='0.65'%3E%3Cpath d='M-100 80 Q 200 -40 500 120 T 1100 60 T 1300 200' /%3E%3Cpath d='M-100 160 Q 250 20 550 200 T 1050 140 T 1300 280' /%3E%3Cpath d='M-100 240 Q 180 120 480 270 T 980 220 T 1300 360' /%3E%3Cpath d='M-100 320 Q 300 200 600 340 T 1150 290 T 1300 440' /%3E%3Cpath d='M-100 400 Q 220 280 520 420 T 1020 380 T 1300 520' /%3E%3Cpath d='M-100 480 Q 350 360 650 490 T 1200 450 T 1300 600' /%3E%3Cpath d='M-100 0 Q 300 -80 700 40 T 1200 10' /%3E%3Cpath d='M-100 560 Q 400 420 800 550 T 1300 580' /%3E%3Cpath d='M 100 650 Q 450 300 850 500 T 1250 250' /%3E%3Cpath d='M -50 350 C 200 550 450 150 750 350 C 1050 550 1150 150 1300 250' /%3E%3Cpath d='M -50 150 C 300 350 550 -50 850 150 C 1150 350 1250 -50 1350 100' /%3E%3C/g%3E%3C/svg%3E");
       background-size: cover;
       background-position: center;
@@ -798,7 +812,78 @@
     @media (max-width: 768px) {
       .container { width: calc(100% - 32px); }
       .header-inner { justify-content: space-between; }
-      .nav-links { display: none; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      /* Mobile Menu Drawer Layout */
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 17px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
       .hero { height: auto; min-height: 480px; padding-bottom: 60px; }
       .hero h1 { font-size: 32px; }
       .hero-controls { display: none; }
@@ -834,13 +919,13 @@
         </div>
       </a>
       
-      <nav class="nav-links" aria-label="Main Menu">
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
         <div class="nav-item">
           <a href="index.html">Home</a>
         </div>
 
         <div class="nav-item">
-          <a href="about.html">About Us <span class="arrow">⌄</span></a>
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="about.html#who-we-are">Who are we?</a>
             <a href="about.html#mission">Our Mission</a>
@@ -850,7 +935,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="projects.html">Our Work <span class="arrow">⌄</span></a>
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="projects.html#focus-areas">Focus Areas</a>
             <a href="projects.html#projects">Projects</a>
@@ -860,7 +945,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="partners.html">Partners <span class="arrow">⌄</span></a>
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
@@ -869,7 +954,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="resources.html">Resources <span class="arrow">⌄</span></a>
+          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="resources.html#publications">Publications</a>
             <a href="resources.html#media">Media Library</a>
@@ -879,7 +964,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="contact.html">Get Involved <span class="arrow">⌄</span></a>
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow">⌄</span></a>
           <div class="dropdown-menu">
             <a href="donate.html">Donate</a>
             <a href="contact.html#volunteer">Become a Volunteer</a>
@@ -894,6 +979,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
       </div>
@@ -1145,5 +1237,26 @@
     </div>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
+
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
