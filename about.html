@@ -1,10 +1,1426 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About — NZINC</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/css/style.css"></head>
-<body><div class="utility-bar"><div class="container utility-inner"><span>Research • Conservation • Community</span><div><a href="mailto:hello@nzinc.org.np">hello@nzinc.org.np</a><span class="utility-divider">/</span><span>Nepal</span></div></div></div>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">N<span>+</span></span><span class="brand-name">NZINC<small>Research &amp; Development</small></span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="index.html">Home</a><a class="active" href="about.html">About</a><a href="projects.html">Our work <i>⌄</i></a><a href="team.html">Our team</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Work with us <span>↗</span></a></nav></div></header>
-<main><section class="page-hero page-hero-about"><div class="page-hero-bg"></div><div class="container page-hero-content"><p class="eyebrow eyebrow-light"><span></span> About NZINC</p><h1>Understanding places.<br><em>Enabling change.</em></h1><p>We bring research and people together to support a more resilient relationship between communities and the natural world.</p></div></section>
-<section class="section-pad"><div class="container intro-grid"><div class="section-kicker"><span class="kicker-dot"></span> Who we are</div><div class="intro-main"><h2 class="display-heading">A research-minded team with a <span>community-first outlook.</span></h2><div class="intro-bottom"><p class="lead">We work across aquatic research, environmental understanding and sustainable development in Nepal.</p><div class="intro-aside"><p>Our approach is grounded in field observation, careful analysis and respectful collaboration. We value local knowledge as much as technical expertise, and believe that useful research should be accessible beyond the research setting.</p></div></div></div></div></section>
-<section class="about-image-section"><div class="container about-image-grid"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=85" alt="Aerial view of a winding river through a green landscape"><div><p class="eyebrow"><span></span> Our purpose</p><h2 class="display-heading">Evidence that<br><span>leads somewhere.</span></h2><p>We aim to contribute knowledge that helps identify environmental priorities, strengthen local capacity and inform decisions. We are interested in the connections between healthy ecosystems, livelihoods and long-term community well-being.</p><p>Every landscape has its own story. We start by listening, learning and documenting what is happening on the ground.</p></div></div></section>
-<section class="pillars-section section-pad"><div class="container"><div class="center-heading"><p class="eyebrow"><span></span> Our principles</p><h2 class="display-heading">How we choose<br><span>to work.</span></h2></div><div class="principle-grid"><article><b>01</b><h3>Evidence-led</h3><p>We value transparent methods, reliable observations and thoughtful interpretation.</p></article><article><b>02</b><h3>Locally grounded</h3><p>We recognise the knowledge, priorities and lived experience of local communities.</p></article><article><b>03</b><h3>Collaborative</h3><p>We build connections across disciplines, institutions and communities.</p></article><article><b>04</b><h3>Future-focused</h3><p>We look for practical approaches that support lasting ecological and social value.</p></article></div></div></section>
-<section class="cta-section"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light"><span></span> Let's work together</p><h2>Good work starts<br>with a conversation.</h2></div><a class="round-link" href="contact.html">↗</a></div></section></main>
-<footer class="site-footer"><div class="container footer-main"><a class="brand brand-footer" href="index.html"><span class="brand-mark">N<span>+</span></span><span class="brand-name">NZINC<small>Research &amp; Development</small></span></a><p class="footer-statement">Better knowledge.<br><em>Better futures.</em></p><div class="footer-links"><span>Explore</span><a href="about.html">About</a><a href="projects.html">Projects</a><a href="team.html">Our team</a><a href="contact.html">Contact</a></div><div class="footer-links"><span>Connect</span><a href="mailto:hello@nzinc.org.np">hello@nzinc.org.np</a><a href="https://nzinc.org.np/">nzinc.org.np ↗</a><span class="footer-location">Nepal</span></div></div><div class="container footer-bottom"><span>© <span id="year"></span> NZINC. All rights reserved.</span><span>Made for people and planet.</span><a href="#">Back to top ↑</a></div></footer><script src="assets/js/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Nepal Zebrafish in Nature Center - Our Vision, Mission, Target Groups, and SDGs">
+  <title>About Us - Nepal Zebrafish in Nature Center (NZINC)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES (Matched with Reference)
+       ========================================================================== */
+    :root {
+      --primary-blue: #1b12b2;
+      --primary-hover: #120b8a;
+      --cyan-accent: #00b4d8;
+      --cyan-light: #e6f7f9;
+      --text-dark: #111418;
+      --text-body: #4a4e54;
+      --text-muted: #73777f;
+      --bg-light: #f8f9fa;
+      --bg-card: #ffffff;
+      --border-color: #e2e5ec;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --max-width: 1380px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      width: min(var(--max-width), calc(100% - 60px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       1. NAVIGATION BAR WITH ACTIVE INDICATOR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1.5px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      max-width: 100%;
+      padding: 0 30px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-right: 28px;
+      height: 100%;
+      border-right: 1.5px solid #666666;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .brand-duke-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item > a {
+      color: #2b2b2b;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      padding: 0 4px;
+      transition: color 0.2s ease;
+
+    }
+
+    .nav-item.active > a {
+      color: var(--primary-blue);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-item.active > a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-blue);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .nav-item:hover > a {
+      color: var(--primary-blue);
+    }
+
+    .nav-item > a span.arrow {
+      font-size: 10px;
+      color: #555555;
+      transform: translateY(1px);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e1e1e;
+      min-width: 210px;
+      padding: 20px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 1001;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 35%;
+      right: 35%;
+      height: 2px;
+      background-color: #ffffff;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown-menu a {
+      color: #f1f1f1;
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--cyan-accent);
+    }
+
+    .header-right {
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-search-btn {
+      background: transparent;
+      border: none;
+      color: var(--primary-blue);
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .about-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 18, 25, 0.9) 0%, rgba(20, 25, 35, 0.6) 40%, rgba(245, 175, 25, 0.55) 100%);
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      font-weight: 700;
+      font-family: var(--font-main);
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .about-hero-dots {
+      font-size: 40px;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: 4px;
+    }
+
+    /* ==========================================================================
+       3. VISION SECTION (ABOUT FOUNDATION)
+       ========================================================================== */
+    .vision-section {
+      padding: 100px 0 120px;
+      background-color: #ffffff;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .stats-container {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number-outline {
+      font-size: clamp(64px, 8vw, 110px);
+      font-weight: 800;
+      line-height: 0.9;
+      color: transparent;
+      -webkit-text-stroke: 2px #e0a526;
+      font-family: var(--font-main);
+      margin-bottom: 12px;
+    }
+
+    .stat-number-outline.coral {
+      -webkit-text-stroke: 2px #ff6b6b;
+    }
+
+    .stat-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: #333333;
+      padding-left: 10px;
+    }
+
+    .section-kicker {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666666;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .section-kicker::before {
+      content: "°°";
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+    .vision-title {
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .vision-subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+
+    .vision-text {
+      font-size: 16px;
+      color: var(--text-body);
+      line-height: 1.85;
+    }
+
+    /* ==========================================================================
+       4. MISSION SECTION (DARK THEME)
+       ========================================================================== */
+    .mission-section {
+      background-color: #1a1c1e;
+      color: #ffffff;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .mission-left .section-kicker {
+      color: #a0a5b0;
+    }
+
+    .mission-title {
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 30px;
+    }
+
+    .mission-lead {
+      font-size: 17px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .mission-desc {
+      font-size: 15px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .mission-video-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 420px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .mission-video-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+    }
+
+    .play-video-btn {
+      position: absolute;
+      bottom: -30px;
+      left: 10%;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(18, 20, 24, 0.85);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .play-video-btn:hover {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      transform: scale(1.05);
+    }
+
+    /* ==========================================================================
+       5. WHY COMMUNITY SECTION
+       ========================================================================== */
+    .why-community-section {
+      padding: 110px 0 120px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .why-community-header {
+      max-width: 900px;
+      margin: 0 auto 70px;
+    }
+
+    .why-community-header .section-kicker {
+      justify-content: center;
+    }
+
+    .why-community-title {
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.15;
+    }
+
+    .why-community-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: left;
+    }
+
+    .why-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .why-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .why-card-desc {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .why-card-icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       6. TARGET GROUP SECTION
+       ========================================================================== */
+    .target-group-section {
+      padding: 100px 0 120px;
+      background-color: #fcfdfe;
+    }
+
+    .target-header-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: flex-end;
+      margin-bottom: 60px;
+    }
+
+    .target-title {
+      font-size: clamp(34px, 4.5vw, 56px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.1;
+    }
+
+    .target-subtitle {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+    }
+
+    .target-desc {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    .target-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .target-card {
+      padding: 30px 20px 40px 0;
+      border-right: 1px solid #e5e7eb;
+      padding-right: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .target-card:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .target-card:not(:first-child) {
+      padding-left: 20px;
+    }
+
+    .target-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+    }
+
+    .target-card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 16px;
+    }
+
+    .target-card-text {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       7. SUSTAINABLE DEVELOPMENT GOALS (SDG) INTERACTIVE WHEEL SECTION
+       ========================================================================== */
+    .sdg-section {
+      padding: 100px 0 120px;
+      background-color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sdg-container {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sdg-wheel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1050px;
+      min-height: 750px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* SVG Canvas Styling */
+    .sdg-svg {
+      width: 520px;
+      height: 520px;
+      transform: rotate(-90deg);
+    }
+
+    .sdg-segment {
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .sdg-segment:hover {
+      opacity: 0.85;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
+    }
+
+    /* Center Badge */
+    .sdg-center-badge {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 5;
+      padding: 10px;
+    }
+
+    .sdg-center-badge img {
+      width: 75px;
+      height: auto;
+      margin-bottom: 4px;
+    }
+
+    .sdg-center-text {
+      font-size: 9px;
+      font-weight: 800;
+      color: #0077b6;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .sdg-nzinc-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-top: 4px;
+    }
+
+    /* Callout Data Labels around the wheel */
+    .sdg-callout {
+      position: absolute;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+      max-width: 190px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+    }
+
+    .sdg-callout .pointer-line {
+      height: 1px;
+      background: #ccc;
+      flex-shrink: 0;
+    }
+
+    /* Specific Callout Positions */
+    .c-top-right-1 { top: 30px; right: 180px; color: #e5243b; text-align: left; }
+    .c-top-right-2 { top: 110px; right: 80px; color: #dda63a; text-align: left; }
+    .c-mid-right-1 { top: 220px; right: 40px; color: #4c9f38; text-align: left; }
+    .c-mid-right-2 { top: 350px; right: 30px; color: #ff3a21; text-align: left; }
+    .c-mid-right-3 { top: 480px; right: 50px; color: #26bde2; text-align: left; }
+    .c-bot-right-1 { bottom: 120px; right: 100px; color: #fcc30b; text-align: left; }
+    .c-bot-right-2 { bottom: 40px; right: 180px; color: #a21942; text-align: left; }
+    .c-bottom-center { bottom: 0px; left: 50%; transform: translateX(-50%); color: #fd6925; text-align: center; }
+    .c-bot-left-1 { bottom: 50px; left: 160px; color: #dd1367; text-align: right; }
+    .c-bot-left-2 { bottom: 130px; left: 90px; color: #fd9d24; text-align: right; }
+    .c-mid-left-1 { top: 480px; left: 40px; color: #bf8b2e; text-align: right; }
+    .c-mid-left-2 { top: 360px; left: 30px; color: #3f7e44; text-align: right; }
+    .c-mid-left-3 { top: 230px; left: 50px; color: #0a97d9; text-align: right; }
+    .c-top-left-1 { top: 120px; left: 80px; color: #56c02b; text-align: right; }
+    .c-top-left-2 { top: 40px; left: 170px; color: #00689d; text-align: right; }
+
+    /* Modal / Tooltip for SDG click */
+    .sdg-info-box {
+      margin-top: 20px;
+      padding: 16px 28px;
+      background: #f8fafc;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      font-size: 14px;
+      color: var(--text-dark);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       8. "EVERYONE CAN HELP!" SUPPORT BANNER
+       ========================================================================== */
+    .support-donate-banner {
+      background-color: #1e2022;
+      color: #ffffff;
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .support-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .support-heading-text {
+      font-size: clamp(48px, 7vw, 100px);
+      font-weight: 400;
+      font-family: var(--font-main);
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .support-heading-text .styled-help {
+      background: linear-gradient(90deg, #ffb2cc 0%, #79b0ff 33%, #f3cf7a 66%, #85e8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 500;
+    }
+
+    .donate-oval-btn {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 1.5px solid #e0a526;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .donate-oval-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       9. FOOTER SECTION
+       ========================================================================== */
+    .site-footer {
+      background-color: #ffffff;
+      padding: 65px 0 35px;
+      border-top: 1px solid var(--border-color);
+      font-family: var(--font-main);
+      font-size: 13px;
+      color: var(--text-body);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary-blue);
+      font-family: var(--font-serif);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary-blue);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease;
+    }
+
+    .social-icon-btn:hover { 
+      background: var(--cyan-accent);
+    }
+
+    .social-icon-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: #ffffff;
+    }
+
+    .footer-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .footer-nav-links a {
+      color: var(--primary-blue);
+      font-weight: 600;
+      font-size: 13.5px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-links a:hover { 
+      color: var(--cyan-accent);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 1100px) {
+      .target-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .target-card {
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+      }
+      .why-community-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+      .sdg-wheel-wrapper {
+        min-height: auto;
+      }
+      .sdg-callout {
+        position: static;
+        margin-top: 10px;
+        text-align: left !important;
+      }
+      .sdg-callouts-mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .vision-grid, .mission-grid, .target-header-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .support-banner-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { padding: 0 16px; }
+      .nav-links { display: none; }
+      .target-cards-grid { grid-template-columns: 1fr; }
+      .why-community-grid { grid-template-columns: 1fr; }
+      .sdg-callouts-mobile { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     1. NAVIGATION BAR WITH ACTIVE INDICATOR
+     ========================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-section" aria-label="Go to Home">
+        <div class="brand-logo-wrap">
+          <!-- Duke/NZINC Logo -->
+          <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
+          <span class="brand-title">NZINC</span>
+        </div>
+      </a>
+      
+      <nav class="nav-links" aria-label="Main Menu">
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+
+        <!-- Active Page -->
+        <div class="nav-item active">
+          <a href="about.html">About Us <span class="arrow">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="about.html#vision">Our Vision</a>
+            <a href="about.html#mission">Mission</a>
+            <a href="about.html#why-community">Why Community?</a>
+            <a href="about.html#target-group">Target Group</a>
+            <a href="about.html#sdgs">SDG Goals</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="projects.html">Our Work <span class="arrow">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="projects.html#focus-areas">Focus Areas</a>
+            <a href="projects.html#projects">Projects</a>
+            <a href="projects.html#stories">Success Stories</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="partners.html">Partners <span class="arrow">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="partners.html#partners">Partners</a>
+            <a href="partners.html#donors">Donors</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="resources.html">Resources <span class="arrow">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="resources.html#publications">Publications</a>
+            <a href="resources.html#media">Media Library</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="contact.html">Get Involved <span class="arrow">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="donate.html">Donate</a>
+            <a href="contact.html#volunteer">Become a Volunteer</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <button class="nav-search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       2. HERO SECTION
+       ========================================================================== -->
+    <section class="about-hero">
+      <div class="about-hero-overlay"></div>
+      <div class="container about-hero-content">
+        <span class="about-hero-dots">••</span>
+        <h1>About</h1>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. VISION SECTION (ABOUT FOUNDATION)
+       ========================================================================== -->
+    <section class="vision-section" id="vision">
+      <div class="container vision-grid">
+        <!-- Outline Stats Left -->
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-number-outline">25+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number-outline coral">50+</div>
+            <div class="stat-label">Volunteers work with us</div>
+          </div>
+        </div>
+
+        <!-- Vision Content Right -->
+        <div>
+          <p class="section-kicker">About foundation</p>
+          <h2 class="vision-title">Our Vision :</h2>
+          <p class="vision-subtitle">
+            Well recognized, learning and innovative institution for community plus humane development
+          </p>
+          <p class="vision-text">
+            NZINC (Nepal Zebrafish in Nature Center) is a non-governmental, non-political and non-profit making research and social development organization. Established with a commitment to scientific excellence and ecological preservation, NZINC aims to be recognized as a capable and committed national level organization dedicated to biodiversity conservation, sustainable agriculture, and humane development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. MISSION SECTION (DARK CONTAINER)
+       ========================================================================== -->
+    <section class="mission-section" id="mission">
+      <div class="container mission-grid">
+        <div class="mission-left">
+          <p class="section-kicker">Mission</p>
+          <h2 class="mission-title">Mission of our<br>foundation:</h2>
+          <p class="mission-lead">
+            NZINC is committed to be connector for accessing resources for the right of people
+          </p>
+          <p class="mission-desc">
+            NZINC works in partnership with a range of local, national and international, government and non-government, private sectors and academic institutions. It maintains active research affiliations with Agriculture and Forestry University, Mid-West University, Far-West University, DUKE University, University of Oregon, Social Welfare Council, and Climate Adaptation Networks across Nepal.
+          </p>
+        </div>
+
+        <!-- Video Banner Right -->
+        <div class="mission-video-wrap">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80" alt="Community Foundation Work" class="mission-video-img">
+          <button class="play-video-btn" onclick="alert('Playing Foundation Documentary Video...');">
+            Play video
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. WHY COMMUNITY SECTION
+       ========================================================================== -->
+    <section class="why-community-section" id="why-community">
+      <div class="container">
+        <div class="why-community-header">
+          <p class="section-kicker">Why Community?</p>
+          <h2 class="why-community-title">Empowering Communities for Sustainable Development</h2>
+        </div>
+
+        <div class="why-community-grid">
+          <!-- Column 1 -->
+          <div class="why-card">
+            <div>
+              <h3 class="why-card-title">Empowering Local Solutions</h3>
+              <p class="why-card-desc">
+                Communities best understand their challenges. Supporting them fosters localized, sustainable solutions that address their unique needs effectively.
+              </p>
+            </div>
+            <!-- Hexagon Icon -->
+            <div class="why-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff7a00" stroke-width="2">
+                <path d="M12 2l8.5 4.9v9.8L12 21.6l-8.5-4.9V6.9L12 2z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="why-card">
+            <div>
+              <h3 class="why-card-title">Building Resilience</h3>
+              <p class="why-card-desc">
+                Strong communities can adapt to adversity, recover from setbacks, and sustain growth, ensuring long-term stability and progress.
+              </p>
+            </div>
+            <!-- Lightbulb Icon -->
+            <div class="why-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e0a526" stroke-width="2">
+                <path d="M9 18h6m-3 3v-3m-4-2.5a6 6 0 118 0c-1 1-1.5 2-1.5 3.5h-5c0-1.5-.5-2.5-1.5-3.5z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="why-card">
+            <div>
+              <h3 class="why-card-title">Reducing Inequality</h3>
+              <p class="why-card-desc">
+                Community support bridges gaps in access to education, healthcare, and resources, promoting equal opportunities for all members.
+              </p>
+            </div>
+            <!-- Water Drop Icon -->
+            <div class="why-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="why-card">
+            <div>
+              <h3 class="why-card-title">Fostering Collaboration</h3>
+              <p class="why-card-desc">
+                Encouraging community-led initiatives strengthens bonds among individuals, fostering unity, trust, and shared responsibility for growth.
+              </p>
+            </div>
+            <!-- Tree Icon -->
+            <div class="why-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="2">
+                <path d="M12 2L5 12h4l-3 6h12l-3-6h4L12 2zM12 18v4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       6. TARGET GROUP SECTION
+       ========================================================================== -->
+    <section class="target-group-section" id="target-group">
+      <div class="container">
+        <div class="target-header-grid">
+          <div>
+            <p class="section-kicker">Target Group</p>
+            <h2 class="target-title">Empowering Communities,<br>Transforming Lives</h2>
+          </div>
+          <div>
+            <p class="target-subtitle">
+              NZINC is dedicated to uplifting marginalized and vulnerable groups, fostering inclusion and opportunity.
+            </p>
+            <p class="target-desc">
+              We focus on improving the lives of Women, Seniors, Discriminated People, Youth, Children.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5 Columns Grid -->
+        <div class="target-cards-grid">
+          <!-- Women -->
+          <div class="target-card">
+            <div class="target-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#ff7a00" stroke-width="1.8">
+                <path d="M12 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 14v8M9 18h6"/>
+              </svg>
+            </div>
+            <h3 class="target-card-title">Women</h3>
+            <p class="target-card-text">
+              Promoting gender equality through education, empowerment, and economic independence.
+            </p>
+          </div>
+
+          <!-- Seniors -->
+          <div class="target-card">
+            <div class="target-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#e0a526" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+              </svg>
+            </div>
+            <h3 class="target-card-title">Seniors</h3>
+            <p class="target-card-text">
+              Ensuring dignity, care, and active participation in community life.
+            </p>
+          </div>
+
+          <!-- Discriminated People -->
+          <div class="target-card">
+            <div class="target-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-3-3.87M9 20v-1a4 4 0 0 1 4-4h1M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+              </svg>
+            </div>
+            <h3 class="target-card-title">Discriminated People</h3>
+            <p class="target-card-text">
+              Advocating for social justice and equal opportunities to combat discrimination.
+            </p>
+          </div>
+
+          <!-- Youth -->
+          <div class="target-card">
+            <div class="target-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="1.8">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2zM12 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+              </svg>
+            </div>
+            <h3 class="target-card-title">Youth</h3>
+            <p class="target-card-text">
+              Equipping young individuals with skills, knowledge, and opportunities for a brighter future.
+            </p>
+          </div>
+
+          <!-- Children -->
+          <div class="target-card">
+            <div class="target-icon">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#3a86ff" stroke-width="1.8">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h3 class="target-card-title">Children</h3>
+            <p class="target-card-text">
+              Enhancing access to education, healthcare, and safety for holistic development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       7. SUSTAINABLE DEVELOPMENT GOALS (SDG) INTERACTIVE WHEEL SECTION
+       ========================================================================== -->
+    <section class="sdg-section" id="sdgs">
+      <div class="container sdg-container">
+        
+        <div class="sdg-wheel-wrapper">
+          <!-- Center UN/NZINC Badge -->
+          <div class="sdg-center-badge">
+            <!-- UN Symbol SVG -->
+            <svg width="42" height="42" viewBox="0 0 100 100" fill="#0077b6">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#0077b6" stroke-width="3"/>
+              <circle cx="50" cy="50" r="30" fill="none" stroke="#0077b6" stroke-width="2"/>
+              <line x1="50" y1="5" x2="50" y2="95" stroke="#0077b6" stroke-width="2"/>
+              <line x1="5" y1="50" x2="95" y2="50" stroke="#0077b6" stroke-width="2"/>
+              <path d="M 20 50 A 30 30 0 0 0 80 50" fill="none" stroke="#0077b6" stroke-width="3"/>
+            </svg>
+            <div class="sdg-center-text">SUSTAINABLE<br>DEVELOPMENT<br><strong>GOALS</strong></div>
+            <div class="sdg-nzinc-sub">NZINC 2026</div>
+          </div>
+
+          <!-- SVG 17 Segment SDG Wheel -->
+          <svg class="sdg-svg" viewBox="0 0 500 500" id="sdgWheel">
+            <!-- JS will inject the 17 segments dynamically with standard UN SDG colors -->
+          </svg>
+
+          <!-- Floating Data Labels around the Wheel (Exact screenshot data) -->
+          <div class="sdg-callout c-top-right-1">485698 HOUSEHOLDS AND 2 MILLION PEOPLE</div>
+          <div class="sdg-callout c-top-right-2">460 RURAL COOPS. &amp; 1500 BILLION CAPITAL GENERATE</div>
+          <div class="sdg-callout c-mid-right-1">EDUCATION: 150 HHS</div>
+          <div class="sdg-callout c-mid-right-2">15000 YOUTH SELF-EMPLOYMENT</div>
+          <div class="sdg-callout c-mid-right-3">1300 HHS: HEALTH &amp; NUTRITION</div>
+          <div class="sdg-callout c-bot-right-1">21 HOUSE SUPPORT FOR BOTE COMMUNITY</div>
+          <div class="sdg-callout c-bot-right-2">SOLAR: 2100 HHS</div>
+          <div class="sdg-callout c-bottom-center">60 CFUGS, 46 PRIVATE FOREST, 80 AGRI-FOREST, 50 PUBLIC LAND</div>
+          <div class="sdg-callout c-bot-left-1">1660000 TREE PLANTATION</div>
+          <div class="sdg-callout c-bot-left-2">10237 ICS &amp; 2104 BIO-GAS</div>
+          <div class="sdg-callout c-mid-left-1">DRR/RESILINCY: 7000 HHS</div>
+          <div class="sdg-callout c-mid-left-2">LAND OWNERSHIP FACILITATION 350 HHS</div>
+          <div class="sdg-callout c-mid-left-3">4200 HAC FOREST PROMOTION</div>
+          <div class="sdg-callout c-top-left-1">10 GROUND WATER RECHARGE</div>
+          <div class="sdg-callout c-top-left-2">RED TIKA MOVEMENT: 100 HHS</div>
+        </div>
+
+        <!-- Interactive Info Box -->
+        <div class="sdg-info-box" id="sdgInfoBox">
+          Hover over or click any SDG segment to view NZINC's targeted community contributions.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       8. "EVERYONE CAN HELP!" SUPPORT BANNER
+       ========================================================================== -->
+    <section class="support-donate-banner">
+      <div class="container support-banner-inner">
+        <h2 class="support-heading-text">
+          Everyone <span class="styled-help">can help!</span>
+        </h2>
+        <a href="donate.html" class="donate-oval-btn">
+          Donate
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+     9. FOOTER SECTION
+     ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo-wrap">
+          <img src="Image/english.png" alt="NZINC Logo" style="width:36px; height:36px; border-radius:50%;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
+          NZINC
+        </div>
+        <div class="social-links">
+          <span style="font-size:12px; font-weight:600; text-transform:uppercase; margin-right:8px; color:var(--text-muted);">Follow us on</span>
+          <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-links">
+        <a href="about.html">About NZINC</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="resources.html">Publications</a>
+        <a href="contact.html">Get Involved</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© NZINC 2026. All rights reserved.</div>
+        <div>Dedicated to Nature, Community, and Well-being.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic SVG SDG Wheel Generator Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const svg = document.getElementById("sdgWheel");
+      const infoBox = document.getElementById("sdgInfoBox");
+      const numSegments = 17;
+      const cx = 250, cy = 250, rOuter = 240, rInner = 110;
+
+      // 17 Official SDG Colors
+      const sdgColors = [
+        "#E5243B", "#DDA63A", "#4C9F38", "#C5192D", "#FF3A21",
+        "#26BDE2", "#FCC30B", "#A21942", "#FD6925", "#DD1367",
+        "#FD9D24", "#BF8B2E", "#3F7E44", "#0A97D9", "#56C02B",
+        "#00689D", "#19486A"
+      ];
+
+      const sdgLabels = [
+        "SDG 1: No Poverty - 485,698 Households & 2 Million People Supported",
+        "SDG 2: Zero Hunger - 460 Rural Co-ops & 1,500 Billion Capital Generated",
+        "SDG 3: Good Health - 1,300 Households: Health & Nutrition",
+        "SDG 4: Quality Education - Education support for 150 Households",
+        "SDG 5: Gender Equality - Women Empowerment Programs",
+        "SDG 6: Clean Water - 10 Ground Water Recharge Projects & Bote House Support",
+        "SDG 7: Affordable Clean Energy - Solar Support for 2,100 Households & 2,104 Bio-Gas",
+        "SDG 8: Decent Work - 15,000 Youth Self-Employment Opportunities",
+        "SDG 9: Industry & Innovation - Rural Infrastructure & Agricultural Tech",
+        "SDG 10: Reduced Inequalities - Facilitating Land Ownership for 350 Households",
+        "SDG 11: Sustainable Cities - DRR & Resiliency Training for 7,000 Households",
+        "SDG 12: Responsible Consumption - 10,237 Improved Cookstoves (ICS)",
+        "SDG 13: Climate Action - 4,200 Hectares Forest Promotion",
+        "SDG 14: Life Below Water - Freshwater Zebrafish & Aquatic Biodiversity Conservation",
+        "SDG 15: Life on Land - 1,660,000 Tree Plantations across 60 CFUGs",
+        "SDG 16: Peace & Justice - Social Justice & Community Mediation",
+        "SDG 17: Partnerships - Strategic Collaborations with Universities & Government Bodies"
+      ];
+
+      const angleStep = (2 * Math.PI) / numSegments;
+
+      for (let i = 0; i < numSegments; i++) {
+        const startAngle = i * angleStep;
+        const endAngle = (i + 1) * angleStep;
+
+        // Calculate arc coordinates
+        const x1Outer = cx + rOuter * Math.cos(startAngle);
+        const y1Outer = cy + rOuter * Math.sin(startAngle);
+        const x2Outer = cx + rOuter * Math.cos(endAngle);
+        const y2Outer = cy + rOuter * Math.sin(endAngle);
+
+        const x1Inner = cx + rInner * Math.cos(startAngle);
+        const y1Inner = cy + rInner * Math.sin(startAngle);
+        const x2Inner = cx + rInner * Math.cos(endAngle);
+        const y2Inner = cy + rInner * Math.sin(endAngle);
+
+        const pathData = [
+          `M ${x1Inner} ${y1Inner}`,
+          `L ${x1Outer} ${y1Outer}`,
+          `A ${rOuter} ${rOuter} 0 0 1 ${x2Outer} ${y2Outer}`,
+          `L ${x2Inner} ${y2Inner}`,
+          `A ${rInner} ${rInner} 0 0 0 ${x1Inner} ${y1Inner}`,
+          'Z'
+        ].join(' ');
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", pathData);
+        path.setAttribute("fill", sdgColors[i]);
+        path.setAttribute("class", "sdg-segment");
+
+        // Hover effect to display details in infoBox
+        path.addEventListener("mouseenter", function () {
+          infoBox.innerHTML = `<strong>Goal ${i + 1}:</strong> ${sdgLabels[i]}`;
+          infoBox.style.color = sdgColors[i];
+          infoBox.style.borderColor = sdgColors[i];
+        });
+
+        path.addEventListener("mouseleave", function () {
+          infoBox.innerHTML = "Hover over or click any SDG segment to view NZINC's targeted community contributions.";
+          infoBox.style.color = "var(--text-dark)";
+          infoBox.style.borderColor = "var(--border-color)";
+        });
+
+        svg.appendChild(path);
+      }
+    });
+  </script>
+</body>
+</html>
