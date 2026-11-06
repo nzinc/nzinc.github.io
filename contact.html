@@ -486,147 +486,356 @@
       transform: scale(1.04);
     }
 
+  /* ==========================================================================
+   7. COMPACT MULTI-COLUMN THEME FOOTER
+   ========================================================================== */
+
+.site-footer {
+  background-color: #ffffff;
+  color: #222222;
+  padding: 22px 0 10px;
+  font-family: var(--font-main);
+}
+
+/* Footer Grid */
+.footer-grid-multi {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Brand Section */
+.footer-col-brand h3 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 2px;
+  letter-spacing: 0.02em;
+}
+
+.footer-col-brand p.sub-org {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Contact Information */
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+  opacity: 1;
+  margin-bottom: 8px;
+}
+
+.footer-contact-info a {
+  color: #007b9e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact-info a:hover {
+  color: #005b78;
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.social-icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eaf5f8;
+  color: #007b9e;
+  display: grid;
+  place-items: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.social-icon-btn:hover {
+  background: #d5edf3;
+  transform: translateY(-2px);
+}
+
+.social-icon-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #007b9e;
+}
+
+/* Footer Columns */
+.footer-column h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dddddd;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #333333;
+  opacity: 1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #007b9e;
+}
+
+/* Footer Bottom */
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #444444;
+  opacity: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .footer-grid-multi {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer-col-brand {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 20px 0 10px;
+  }
+
+  .footer-grid-multi {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 14px;
+    padding-bottom: 12px;
+  }
+
+  .footer-col-brand {
+    grid-column: span 2;
+  }
+
+  .footer-col-brand h3 {
+    font-size: 24px;
+  }
+
+  .footer-col-brand p.sub-org {
+    font-size: 13px;
+  }
+
+  .footer-contact-info {
+    font-size: 16px;
+  }
+
+  .footer-column h4 {
+    font-size: 15px;
+  }
+
+  .footer-column ul li a {
+    font-size: 12px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 10px;
+    font-size: 10.5px;
+  }
+}
+
     /* ==========================================================================
-       6. MULTI-COLUMN THEME FOOTER
+       RESPONSIVE DESIGN (INCLUDING MOBILE MENU DRAWER)
        ========================================================================== */
-    .site-footer {
-      background-color: #ffffff;
-      color: #222222;
-      padding: 22px 0 10px;
-      font-family: var(--font-main);
-    }
-
-    .footer-grid-multi {
-      display: grid;
-      grid-template-columns: 1.5fr repeat(4, 1fr);
-      gap: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #dddddd;
-    }
-
-    .footer-col-brand h3 {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 700;
-      color: #111111;
-      margin-bottom: 2px;
-      letter-spacing: 0.02em;
-    }
-
-    .footer-col-brand p.sub-org {
-      font-size: 14px;
-      font-weight: 600;
-      color: #333333;
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-
-    .footer-contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: 12px;
-      font-weight: 500;
-      color: #333333;
-      margin-bottom: 8px;
-    }
-
-    .footer-contact-info a {
-      color: #007b9e;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .footer-contact-info a:hover {
-      color: #005b78;
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 6px;
-    }
-
-    .social-icon-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #eaf5f8;
-      color: #007b9e;
-      display: grid;
-      place-items: center;
-      transition: background 0.25s ease, transform 0.25s ease;
-    }
-
-    .social-icon-btn:hover {
-      background: #d5edf3;
-      transform: translateY(-2px);
-    }
-
-    .social-icon-btn svg {
-      width: 15px;
-      height: 15px;
-      fill: #007b9e;
-    }
-
-    .footer-column h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #111111;
-      margin-bottom: 8px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #dddddd;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .footer-column ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .footer-column ul li a {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: #333333;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-column ul li a:hover {
-      color: #007b9e;
-    }
-
-    .footer-bottom-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 10px;
-      font-size: 11px;
-      font-weight: 500;
-      color: #444444;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .contact-grid-2 { grid-template-columns: 1fr; gap: 40px; }
-      .footer-grid-multi { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      .footer-col-brand { grid-column: span 3; }
+    @media (max-width: 1100px) {
+      .initiatives-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid-multi {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
-      .info-block-grid { grid-template-columns: 1fr; gap: 20px; }
-      .support-banner-inner { flex-direction: column; text-align: center; }
-      .footer-grid-multi { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }
-      .footer-col-brand { grid-column: span 2; }
+      .container { width: calc(100% - 32px); }
+      .header-inner { justify-content: space-between; padding: 0 16px; }
+      
+      .mobile-nav-toggle { display: block; }
+      
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1.5px solid #222222;
+        padding: 20px 24px;
+        height: auto;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .nav-links.is-active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: auto;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-item:last-child {
+        border-bottom: none;
+      }
+
+      .nav-item > a {
+        width: 100%;
+        padding: 14px 0;
+        justify-content: space-between;
+        font-size: 17px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        background-color: #262626;
+        width: 100%;
+        padding: 12px 18px;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .dropdown-menu::before {
+        display: none;
+      }
+
+      .nav-item.open .dropdown-menu {
+        display: flex;
+      }
+
+      .initiatives-grid-3 { grid-template-columns: 1fr; }
+      .completed-projects-grid { grid-template-columns: 1fr; }
+      .support-banner-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
+      .accordion-content { padding-left: 20px; }
+    }
+
+    /* Page-Specific Custom Layout CSS */
+    .projects-main-hero {
+      position: relative;
+      height: 380px;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .projects-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 18, 25, 0.9) 0%, rgba(20, 25, 35, 0.55) 45%, rgba(245, 175, 25, 0.6) 100%);
+    }
+
+    .projects-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .projects-hero-dots {
+      font-size: 40px;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: 4px;
+    }
+
+    .section-header-wrap {
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .section-kicker::before {
+      content: "°°";
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+    .section-main-title {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.15;
     }
   </style>
 </head>
@@ -647,7 +856,7 @@
       <nav class="nav-links" id="navLinks">
         <div class="nav-item"><a href="index.html">Home</a></div>
         <div class="nav-item">
-          <a href="about.html">About Us <span>⌄</span></a>
+          <a href="about.html">About Us <span></span></a>
           <div class="dropdown-menu">
             <a href="about.html#vision">Our Vision</a>
             <a href="about.html#mission">Mission</a>
@@ -657,7 +866,7 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="projects.html">Our Work <span>⌄</span></a>
+          <a href="projects.html">Our Work <span></span></a>
           <div class="dropdown-menu">
             <a href="projects.html#initiatives">Initiatives</a>
             <a href="projects.html#completed">Completed Projects</a>
@@ -665,21 +874,24 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="partners.html">Partners <span>⌄</span></a>
+          <a href="partners.html">Partners <span></span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="resources.html">Resources <span>⌄</span></a>
+          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="resources.html#publications">Publications</a>
-            <a href="resources.html#media">Media Library</a>
+            <a href="publications.html">Publications</a>
+            <a href="gallery.html">Media Library</a>
+            <a href="news.html">News</a>
+            <a href="faq.html">FAQ</a>
           </div>
         </div>
-        <div class="nav-item active">
-          <a href="contact.html">Get Involved <span>⌄</span></a>
+
+        <div class="nav-item">
+          <a href="contact.html" class="dropdown-toggle">Get Involved <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="donate.html">Donate</a>
             <a href="volunteer.html">Become a Volunteer</a>
@@ -804,19 +1016,18 @@
   </main>
 
   <!-- ==========================================================================
-     6. MULTI-COLUMN THEME FOOTER
+     7. MULTI-COLUMN THEME FOOTER (WITH SOCIAL ICONS & LARGER FONT)
      ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid-multi">
-        
         <!-- Col 1: Brand, Address, Email & Socials -->
         <div class="footer-col-brand">
           <h3>NZINC</h3>
           <p class="sub-org">Nepal Zebrafish in Nature Center</p>
           <div class="footer-contact-info">
-            <span>📍 Bharatpur-7, Chitwan, Nepal</span>
-            <span>✉️ <a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
+            <span> Bharatpur-7, Chitwan, Nepal</span>
+            <span><a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
           </div>
           <div class="social-links">
             <a href="#" class="social-icon-btn" aria-label="Twitter">
@@ -834,7 +1045,7 @@
           </div>
         </div>
 
-        <!-- Col 2: About -->
+        <!-- Col 2: About & Vision -->
         <div class="footer-column">
           <h4>About</h4>
           <ul>
@@ -866,13 +1077,12 @@
           </ul>
         </div>
 
-        <!-- Col 5: Support -->
+        <!-- Col 5: Support & Contact -->
         <div class="footer-column">
           <h4>Support</h4>
           <ul>
             <li><a href="donate.html">Donate</a></li>
-            <li><a href="volunteer.html">Become a Volunteer</a></li>
-            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html#volunteer">Become a Volunteer</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="resources.html">Resources</a></li>
           </ul>
@@ -887,21 +1097,35 @@
     </div>
   </footer>
 
-  <!-- FORM SCRIPT -->
+  <!-- Scripts: Mobile Navigation Toggle + Accordions -->
   <script>
-    function handleContactSubmit(event) {
-      event.preventDefault();
-      const name = document.getElementById('senderName').value;
-      const email = document.getElementById('senderEmail').value;
-      const subject = document.getElementById('senderSubject').value || 'Contact Inquiry';
-      const message = document.getElementById('senderMessage').value;
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-      const recipient = "nzincnepal@gmail.com";
-      const mailSubject = encodeURIComponent(`${subject} - from ${name}`);
-      const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('is-active');
+    });
 
-      window.location.href = `mailto:${recipient}?subject=${mailSubject}&body=${mailBody}`;
-    }
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parentItem = toggle.closest('.nav-item');
+          parentItem.classList.toggle('open');
+        }
+      });
+    });
+
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
