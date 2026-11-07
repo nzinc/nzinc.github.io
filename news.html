@@ -6,10 +6,10 @@
   <meta name="description" content="News & Blog Grid - Nepal Zebrafish in Nature Center (NZINC)">
   <title>News & Blog Grid - NZINC</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
@@ -20,13 +20,14 @@
       --primary-hover: #120b8a;
       --cyan-accent: #00b4d8;
       --cyan-light: #e6f7f9;
-      --text-dark: #111418;
-      --text-body: #4a4e54;
-      --text-muted: #73777f;
+      --text-dark: #000000;
+      --text-body: #000000;
+      --text-muted: #111111;
       --bg-light: #f8f9fa;
-      --border-color: #e5e7eb;
+      --bg-card: #ffffff;
+      --border-color: #e2e5ec;
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --max-width: 1380px;
     }
 
@@ -35,8 +36,9 @@
     body {
       font-family: var(--font-main);
       color: var(--text-dark);
-      background-color: #ffffff;
+      background-color: #fcfdfe;
       line-height: 1.6;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -50,7 +52,7 @@
     }
 
     /* ==========================================================================
-       1. NAVIGATION BAR
+       EXACT NAVIGATION BAR DESIGN WITH DROPDOWNS
        ========================================================================== */
     .site-header {
       position: sticky;
@@ -59,8 +61,7 @@
       width: 100%;
       z-index: 1000;
       background-color: #ffffff;
-      border-bottom: 1.5px solid #e5e7eb;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-bottom: 1.5px solid #222222;
     }
 
     .header-inner {
@@ -68,14 +69,16 @@
       align-items: center;
       height: 80px;
       width: 100%;
-      padding: 0 30px;
+      max-width: 100%;
+      padding: 0;
     }
 
+    /* Left Brand Section with Duke Logo Image */
     .brand-section {
       display: flex;
       align-items: center;
       gap: 16px;
-      padding-right: 28px;
+      padding: 0 28px;
       height: 100%;
       border-right: 1.5px solid #666666;
       background: #ffffff;
@@ -90,20 +93,21 @@
     }
 
     .brand-duke-logo {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
     }
 
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
-      color: var(--primary-blue);
+      color: #1b12b2;
       letter-spacing: 0.02em;
     }
 
+    /* Main Navigation Links with Dropdown Menu Hovering */
     .nav-links {
       display: flex;
       align-items: center;
@@ -121,10 +125,10 @@
     }
 
     .nav-item > a {
-      color: #2b2b2b;
+      color: #000000;
       font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -133,27 +137,17 @@
       transition: color 0.2s ease;
     }
 
-    .nav-item.active > a {
-      color: var(--primary-blue);
-      font-weight: 600;
-      position: relative;
-    }
-
-    .nav-item.active > a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-blue);
-      border-radius: 2px 2px 0 0;
-    }
-
     .nav-item:hover > a {
-      color: var(--primary-blue);
+      color: #1b12b2;
     }
 
+    .nav-item > a span.arrow {
+      font-size: 10px;
+      color: #000000;
+      transform: translateY(1px);
+    }
+
+    /* Dropdown Menu Styles (Using Cormorant Garamond / Serif) */
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -161,16 +155,25 @@
       transform: translateX(-50%);
       background-color: #1e1e1e;
       min-width: 210px;
-      padding: 20px 24px;
+      padding: 22px 24px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.25s ease, visibility 0.25s ease;
       z-index: 1001;
-      border-radius: 0 0 6px 6px;
+    }
+
+    .dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 35%;
+      right: 35%;
+      height: 2px;
+      background-color: #ffffff;
     }
 
     .nav-item:hover .dropdown-menu {
@@ -179,17 +182,22 @@
     }
 
     .dropdown-menu a {
-      color: #f1f1f1;
-      font-family: var(--font-main);
-      font-size: 14px;
+      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
       transition: color 0.2s ease;
       white-space: nowrap;
     }
 
-    .dropdown-menu a:hover { color: var(--cyan-accent); }
+    .dropdown-menu a:hover {
+      color: #00b4d8;
+    }
 
+    /* Right Search & Mobile Toggle Controls */
     .header-right {
-      padding-left: 20px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -198,16 +206,30 @@
     .nav-search-btn {
       background: transparent;
       border: none;
-      color: var(--primary-blue);
+      color: #1b12b2;
       cursor: pointer;
       font-size: 18px;
       display: flex;
       align-items: center;
-      padding: 8px;
+      justify-content: center;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--primary-blue);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
     }
 
     /* ==========================================================================
-       2. HERO SECTION
+       HERO SECTION
        ========================================================================== */
     .blog-hero {
       position: relative;
@@ -243,18 +265,18 @@
     .blog-hero h1 {
       font-size: clamp(38px, 6.5vw, 76px);
       font-weight: 700;
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       color: #ffffff;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       line-height: 1.1;
     }
 
     /* ==========================================================================
-       3. BLOG GRID SECTION
+       BLOG GRID SECTION
        ========================================================================== */
     .blog-grid-section {
-      padding: 80px 0 100px;
-      background-color: #ffffff;
+      padding: 100px 0 120px;
+      background-color: #fcfdfe;
     }
 
     .blog-grid-3 {
@@ -270,7 +292,7 @@
       border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -303,7 +325,8 @@
       left: 14px;
       background: var(--primary-blue);
       color: #ffffff;
-      font-size: 11.5px;
+      font-family: var(--font-main);
+      font-size: 12px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 4px;
@@ -318,16 +341,20 @@
     }
 
     .blog-categories {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 700;
+      color: #008fa8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       margin-bottom: 8px;
       display: flex;
       gap: 8px;
     }
 
     .blog-card-title {
-      font-size: 20px;
+      font-family: var(--font-serif);
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.35;
@@ -340,35 +367,39 @@
     }
 
     .blog-card-desc {
-      font-size: 14.5px;
-      color: var(--text-body);
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #000000;
       line-height: 1.65;
       margin-bottom: 20px;
       flex-grow: 1;
+      font-weight: 400;
     }
 
     .read-more-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 14px;
+      font-family: var(--font-main);
+      font-size: 15px;
       font-weight: 700;
-      color: var(--cyan-accent);
+      color: var(--primary-blue);
       transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .read-more-link:hover {
-      color: var(--primary-blue);
+      color: var(--cyan-accent);
       transform: translateX(4px);
     }
 
     /* ==========================================================================
-       4. SUPPORT BANNER ("Everyone can help!")
+       SUPPORT / CONTRIBUTE / DONATE BANNER
        ========================================================================== */
     .support-donate-banner {
       background-color: #212322;
       color: #ffffff;
-      padding: 90px 0;
+      padding: 100px 0;
+      position: relative;
     }
 
     .support-banner-inner {
@@ -379,246 +410,190 @@
     }
 
     .support-heading-text {
-      font-size: clamp(40px, 6vw, 90px);
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6.5vw, 100px);
       font-weight: 400;
       color: #ffffff;
-      letter-spacing: -0.03em;
-      line-height: 1;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
     }
 
     .support-heading-text .styled-help {
-      background: linear-gradient(90deg, #ffb2cc 0%, #79b0ff 33%, #f3cf7a 66%, #85e8ff 100%);
+      background: linear-gradient(90deg, #ffb2cc, #79b0ff, #f3cf7a, #85e8ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 500;
     }
 
     .donate-oval-btn {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
-      border: 1.5px solid #e0a526;
+      border: 1.5px solid #ffcc66;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
+      font-family: var(--font-main);
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       flex-shrink: 0;
-      transition: all 0.3s ease;
-      background: transparent;
+      transition: background 0.3s ease;
     }
 
     .donate-oval-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #ffffff;
-      transform: scale(1.04);
+      background: rgba(255, 255, 255, 0.08);
     }
 
-   /* ==========================================================================
-   7. COMPACT MULTI-COLUMN THEME FOOTER
-   ========================================================================== */
-
-.site-footer {
-  background-color: #ffffff;
-  color: #222222;
-  padding: 22px 0 10px;
-  font-family: var(--font-main);
-}
-
-/* Footer Grid */
-.footer-grid-multi {
-  display: grid;
-  grid-template-columns: 1.5fr repeat(4, 1fr);
-  gap: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #dddddd;
-}
-
-/* Brand Section */
-.footer-col-brand h3 {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  font-weight: 700;
-  color: #111111;
-  margin-bottom: 2px;
-  letter-spacing: 0.02em;
-}
-
-.footer-col-brand p.sub-org {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-
-/* Contact Information */
-.footer-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #333333;
-  opacity: 1;
-  margin-bottom: 8px;
-}
-
-.footer-contact-info a {
-  color: #007b9e;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-contact-info a:hover {
-  color: #005b78;
-  text-decoration: underline;
-}
-
-/* Social Media Icons */
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.social-icon-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #eaf5f8;
-  color: #007b9e;
-  display: grid;
-  place-items: center;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.social-icon-btn:hover {
-  background: #d5edf3;
-  transform: translateY(-2px);
-}
-
-.social-icon-btn svg {
-  width: 15px;
-  height: 15px;
-  fill: #007b9e;
-}
-
-/* Footer Columns */
-.footer-column h4 {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111111;
-  margin-bottom: 8px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dddddd;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.footer-column ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-column ul li a {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #333333;
-  opacity: 1;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-column ul li a:hover {
-  color: #007b9e;
-}
-
-/* Footer Bottom */
-.footer-bottom-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  color: #444444;
-  opacity: 1;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .footer-grid-multi {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .footer-col-brand {
-    grid-column: span 3;
-  }
-}
-
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 20px 0 10px;
-  }
-
-  .footer-grid-multi {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 14px;
-    padding-bottom: 12px;
-  }
-
-  .footer-col-brand {
-    grid-column: span 2;
-  }
-
-  .footer-col-brand h3 {
-    font-size: 24px;
-  }
-
-  .footer-col-brand p.sub-org {
-    font-size: 13px;
-  }
-
-  .footer-contact-info {
-    font-size: 16px;
-  }
-
-  .footer-column h4 {
-    font-size: 15px;
-  }
-
-  .footer-column ul li a {
-    font-size: 12px;
-  }
-
-  .footer-bottom-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding-top: 10px;
-    font-size: 10.5px;
-  }
-}
-
     /* ==========================================================================
-       RESPONSIVE DESIGN (INCLUDING MOBILE MENU DRAWER)
+       COMPACT MULTI-COLUMN THEME FOOTER (HOMOGENOUS)
        ========================================================================== */
-    @media (max-width: 1100px) {
-      .initiatives-grid-3 {
+    .site-footer {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 30px 0 16px;
+      font-family: var(--font-serif);
+    }
+
+    .footer-grid-multi {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1.5px solid #cccccc;
+    }
+
+    .footer-col-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col-brand p.sub-org {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-info a {
+      color: #007b9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-contact-info a:hover {
+      color: #005b78;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: #007b9e;
+    }
+
+    .footer-column h4 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #cccccc;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #007b9e;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .blog-grid-3 {
         grid-template-columns: repeat(2, 1fr);
       }
       .footer-grid-multi {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .footer-col-brand {
+        grid-column: span 3;
       }
     }
 
@@ -671,7 +646,7 @@
         width: 100%;
         padding: 14px 0;
         justify-content: space-between;
-        font-size: 17px;
+        font-size: 20px;
       }
 
       .dropdown-menu {
@@ -696,120 +671,66 @@
         display: flex;
       }
 
-      .initiatives-grid-3 { grid-template-columns: 1fr; }
-      .completed-projects-grid { grid-template-columns: 1fr; }
+      .blog-grid-3 { grid-template-columns: 1fr; }
       .support-banner-inner {
         flex-direction: column;
         text-align: center;
       }
       .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
-      .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
-      .accordion-content { padding-left: 20px; }
-    }
-
-    /* Page-Specific Custom Layout CSS */
-    .projects-main-hero {
-      position: relative;
-      height: 380px;
-      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      color: #ffffff;
-      overflow: hidden;
-    }
-
-    .projects-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(15, 18, 25, 0.9) 0%, rgba(20, 25, 35, 0.55) 45%, rgba(245, 175, 25, 0.6) 100%);
-    }
-
-    .projects-hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .projects-hero-dots {
-      font-size: 40px;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: 4px;
-    }
-
-    .section-header-wrap {
-      margin-bottom: 36px;
-    }
-
-    .section-kicker {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .section-kicker::before {
-      content: "°°";
-      color: var(--primary-blue);
-      font-weight: bold;
-    }
-
-    .section-main-title {
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 700;
-      color: var(--primary-blue);
-      line-height: 1.15;
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 18px; }
     }
   </style>
 </head>
 <body>
   <!-- ==========================================================================
-     1. NAVIGATION BAR
+     HEADER / NAVIGATION WITH DROPDOWNS & DUKE LOGO
      ========================================================================== -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="brand-section">
+      <a href="index.html" class="brand-section" aria-label="Go to Home">
         <div class="brand-logo-wrap">
           <img src="Image/english.png" alt="NZINC Logo" class="brand-duke-logo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
           <span class="brand-title">NZINC</span>
         </div>
       </a>
       
-      <nav class="nav-links" id="navLinks">
-        <div class="nav-item"><a href="index.html">Home</a></div>
+      <nav class="nav-links" id="navLinks" aria-label="Main Menu">
         <div class="nav-item">
-          <a href="about.html">About Us <span></span></a>
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="about.html" class="dropdown-toggle">About Us <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="about.html#vision">Our Vision</a>
-            <a href="about.html#mission">Mission</a>
-            <a href="about.html#why-community">Why Community?</a>
-            <a href="about.html#target-group">Target Group</a>
-            <a href="about.html#sdgs">SDG Goals</a>
+            <a href="about.html#who-we-are">Who are we?</a>
+            <a href="about.html#mission">Our Mission</a>
+            <a href="about.html#community">Why Community?</a>
+            <a href="about.html#impact">Our Impact</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="projects.html">Our Work <span></span></a>
+          <a href="projects.html" class="dropdown-toggle">Our Work <span class="arrow"></span></a>
           <div class="dropdown-menu">
-            <a href="projects.html#initiatives">Initiatives</a>
-            <a href="projects.html#completed">Completed Projects</a>
-            <a href="projects.html#partnerships">Partnership List</a>
+            <a href="projects.html#focus-areas">Focus Areas</a>
+            <a href="projects.html#projects">Projects</a>
+            <a href="projects.html#stories">Success Stories</a>
+            <a href="projects.html#initiatives">Established Initiatives</a>
           </div>
         </div>
+
         <div class="nav-item">
-          <a href="partners.html">Partners <span></span></a>
+          <a href="partners.html" class="dropdown-toggle">Partners <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="partners.html#partners">Partners</a>
             <a href="partners.html#donors">Donors</a>
+            <a href="partners.html#affiliations">Affiliations</a>
           </div>
         </div>
-            <div class="nav-item">
-          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow"></span></a>
+
+        <div class="nav-item">
+          <a href="#resources" class="dropdown-toggle">Resources <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="publications.html">Publications</a>
             <a href="gallery.html">Media Library</a>
@@ -831,7 +752,17 @@
 
       <div class="header-right">
         <button class="nav-search-btn" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="mobile-nav-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
@@ -839,7 +770,7 @@
 
   <main>
     <!-- ==========================================================================
-       2. HERO SECTION
+       HERO SECTION
        ========================================================================== -->
     <section class="blog-hero">
       <div class="blog-hero-overlay"></div>
@@ -850,7 +781,7 @@
     </section>
 
     <!-- ==========================================================================
-       3. BLOG / NEWS GRID SECTION
+       BLOG / NEWS GRID SECTION
        ========================================================================== -->
     <section class="blog-grid-section">
       <div class="container">
@@ -909,7 +840,7 @@
     </section>
 
     <!-- ==========================================================================
-       4. SUPPORT BANNER ("Everyone can help!")
+       SUPPORT / CONTRIBUTE / DONATE BANNER
        ========================================================================== -->
     <section class="support-donate-banner">
       <div class="container support-banner-inner">
@@ -924,7 +855,7 @@
   </main>
 
   <!-- ==========================================================================
-     7. MULTI-COLUMN THEME FOOTER (WITH SOCIAL ICONS & LARGER FONT)
+     MULTI-COLUMN THEME FOOTER (HOMOGENOUS)
      ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -938,10 +869,10 @@
             <span><a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
           </div>
           <div class="social-links">
-            <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <a href="https://x.com/NZINC_Nepal" class="social-icon-btn" aria-label="Twitter">
               <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/p/Nepal-Zebra-Fish-In-Nature-Center-NZINC-61596320360359/" class="social-icon-btn" aria-label="Facebook">
               <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="#" class="social-icon-btn" aria-label="Instagram">
@@ -1000,12 +931,12 @@
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
-        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+        <div style="opacity: 1;">Dedicated to Nature, Community, and Well-being.</div>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts: Mobile Navigation Toggle + Accordions -->
+  <!-- Scripts: Mobile Navigation Toggle -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -1024,14 +955,6 @@
           const parentItem = toggle.closest('.nav-item');
           parentItem.classList.toggle('open');
         }
-      });
-    });
-
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        item.classList.toggle('active');
       });
     });
   </script>

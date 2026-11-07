@@ -6,28 +6,28 @@
   <meta name="description" content="Partners and Collaborators - Nepal Zebrafish in Nature Center">
   <title>Partners &amp; Collaborators - NZINC</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond (Serif Headers/Titles) & Plus Jakarta Sans (Clean Sans-Serif Body/Minor Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
-       DESIGN SYSTEM & VARIABLES (MATCHING INDEX.HTML)
+       DESIGN SYSTEM & VARIABLES (HOMOGENOUS)
        ========================================================================== */
     :root {
       --primary-blue: #1b12b2;
       --primary-hover: #120b8a;
       --cyan-accent: #00b4d8;
       --cyan-light: #e6f7f9;
-      --text-dark: #111418;
-      --text-body: #4a4e54;
-      --text-muted: #73777f;
+      --text-dark: #000000;
+      --text-body: #000000;
+      --text-muted: #111111;
       --bg-light: #f8f9fa;
       --bg-card: #ffffff;
       --border-color: #e2e5ec;
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --max-width: 1380px;
     }
 
@@ -38,6 +38,7 @@
       color: var(--text-dark);
       background-color: #fcfdfe;
       line-height: 1.6;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -51,7 +52,7 @@
     }
 
     /* ==========================================================================
-       HEADER & NAVIGATION BAR (WITH ACTIVE INDICATOR)
+       EXACT NAVIGATION BAR DESIGN WITH DROPDOWNS
        ========================================================================== */
     .site-header {
       position: sticky;
@@ -72,6 +73,7 @@
       padding: 0;
     }
 
+    /* Left Brand Section with Duke Logo Image */
     .brand-section {
       display: flex;
       align-items: center;
@@ -99,12 +101,13 @@
 
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 700;
       color: #1b12b2;
       letter-spacing: 0.02em;
     }
 
+    /* Main Navigation Links with Dropdown Menu Hovering */
     .nav-links {
       display: flex;
       align-items: center;
@@ -122,41 +125,33 @@
     }
 
     .nav-item > a {
-      color: #2b2b2b;
+      color: #000000;
       font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 6px;
       height: 100%;
       padding: 0 4px;
       transition: color 0.2s ease;
-      position: relative;
     }
 
-    .nav-item:hover > a { color: #1b12b2; }
+    .nav-item:hover > a {
+      color: #1b12b2;
+    }
 
     .nav-item.active > a {
       color: #1b12b2;
-      font-weight: 700;
-    }
-    .nav-item.active > a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary-blue);
     }
 
     .nav-item > a span.arrow {
       font-size: 10px;
-      color: #555555;
+      color: #000000;
       transform: translateY(1px);
     }
 
+    /* Dropdown Menu Styles (Using Cormorant Garamond / Serif) */
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -191,19 +186,22 @@
     }
 
     .dropdown-menu a {
-      color: #f1f1f1;
-      font-family: var(--font-main);
-      font-size: 14px;
-      font-weight: 400;
+      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
       line-height: 1.3;
       transition: color 0.2s ease;
       white-space: nowrap;
     }
 
-    .dropdown-menu a:hover { color: #00b4d8; }
+    .dropdown-menu a:hover {
+      color: #00b4d8;
+    }
 
+    /* Right Search & Mobile Toggle Controls */
     .header-right {
-      padding: 0 35px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -259,21 +257,26 @@
     }
 
     .partners-hero-title {
+      font-family: var(--font-serif);
       font-size: clamp(38px, 5vw, 64px);
       font-weight: 700;
       line-height: 1.1;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     .section-kicker {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .section-kicker::before {
@@ -285,7 +288,7 @@
        1. TRANSFORMING LIVES SECTION
        ========================================================================== */
     .transform-section {
-      padding: 90px 0 70px;
+      padding: 120px 0 90px;
       background: #ffffff;
     }
 
@@ -297,25 +300,30 @@
     }
 
     .transform-title {
-      font-size: clamp(30px, 3.8vw, 48px);
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 56px);
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.15;
+      letter-spacing: -0.01em;
       margin-bottom: 20px;
     }
 
     .transform-subtitle {
-      font-size: 17px;
-      font-weight: 600;
+      font-family: var(--font-main);
+      font-size: 18px;
+      font-weight: 700;
       color: var(--text-dark);
       margin-bottom: 16px;
       line-height: 1.4;
     }
 
     .transform-desc {
-      font-size: 15px;
-      color: var(--text-body);
+      font-family: var(--font-main);
+      font-size: 16px;
+      color: #000000;
       line-height: 1.8;
+      font-weight: 400;
     }
 
     .stats-outline-wrap {
@@ -343,7 +351,8 @@
     }
 
     .stat-outline-label {
-      font-size: 14px;
+      font-family: var(--font-main);
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-dark);
       margin-top: 8px;
@@ -353,7 +362,7 @@
        2. PARTNERS LOGO GRID
        ========================================================================== */
     .logo-grid-section {
-      padding: 60px 0 100px;
+      padding: 60px 0 110px;
       background: #ffffff;
     }
 
@@ -374,14 +383,14 @@
     }
 
     .partner-icon-avatar {
-      width: 150px;
-      height: 150px;
+      width: 162px;
+      height: 162px;
       border-radius: 50%;
       object-fit: cover;
       background: #ffffff;
-      padding: 6px;
+      padding: 4px;
       border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -391,9 +400,10 @@
     }
 
     .partner-name-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-dark);
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
       max-width: 160px;
       line-height: 1.35;
     }
@@ -402,7 +412,7 @@
        3. DONORS SECTION
        ========================================================================== */
     .donors-section {
-      padding: 90px 0;
+      padding: 110px 0;
       background: #f8f9fa;
       border-top: 1px solid var(--border-color);
     }
@@ -415,10 +425,11 @@
     }
 
     .donors-title-area h2 {
-      font-size: clamp(30px, 4vw, 48px);
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 58px);
       font-weight: 700;
       color: var(--primary-blue);
-      line-height: 1.2;
+      line-height: 1.15;
       max-width: 600px;
     }
 
@@ -444,7 +455,8 @@
     }
 
     .donor-stat-label {
-      font-size: 13px;
+      font-family: var(--font-main);
+      font-size: 14px;
       font-weight: 700;
       color: var(--text-dark);
       margin-top: 6px;
@@ -460,14 +472,15 @@
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: 40px;
-      padding: 16px 28px;
+      padding: 20px 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-dark);
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
@@ -481,7 +494,7 @@
        4. AFFILIATIONS AND NETWORKS
        ========================================================================== */
     .affiliations-section {
-      padding: 90px 0 110px;
+      padding: 110px 0 130px;
       background: #ffffff;
       border-top: 1px solid var(--border-color);
     }
@@ -489,7 +502,7 @@
     .networks-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 24px;
       margin-top: 40px;
     }
 
@@ -498,14 +511,15 @@
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 24px;
-      font-size: 14px;
+      font-family: var(--font-main);
+      font-size: 15px;
       font-weight: 600;
-      color: var(--text-dark);
+      color: #000000;
       line-height: 1.4;
       display: flex;
       align-items: center;
-      min-height: 80px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      min-height: 90px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
     /* ==========================================================================
@@ -513,7 +527,7 @@
        ========================================================================== */
     .thanks-watermark-section {
       position: relative;
-      padding: 120px 0;
+      padding: 130px 0;
       background: linear-gradient(135deg, #fef6f0 0%, #f0f7ff 50%, #fbf0f5 100%);
       text-align: center;
       overflow: hidden;
@@ -541,10 +555,10 @@
     }
 
     .thanks-subtitle {
-      font-size: clamp(20px, 3vw, 32px);
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 3.5vw, 42px);
       font-weight: 700;
       color: var(--primary-blue);
-      text-transform: lowercase;
       letter-spacing: -0.01em;
     }
 
@@ -566,9 +580,9 @@
     }
 
     .support-heading-text {
-      font-size: clamp(45px, 6.5vw, 96px);
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6.5vw, 100px);
       font-weight: 400;
-      font-family: var(--font-main);
       color: #ffffff;
       letter-spacing: -0.02em;
       line-height: 1.05;
@@ -590,8 +604,9 @@
       align-items: center;
       justify-content: center;
       color: #ffffff;
+      font-family: var(--font-main);
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       flex-shrink: 0;
       transition: background 0.3s ease;
     }
@@ -600,210 +615,160 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-/* ==========================================================================
-   7. COMPACT MULTI-COLUMN THEME FOOTER
-   ========================================================================== */
-
-.site-footer {
-  background-color: #ffffff;
-  color: #222222;
-  padding: 22px 0 10px;
-  font-family: var(--font-main);
-}
-
-/* Footer Grid */
-.footer-grid-multi {
-  display: grid;
-  grid-template-columns: 1.5fr repeat(4, 1fr);
-  gap: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #dddddd;
-}
-
-/* Brand Section */
-.footer-col-brand h3 {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  font-weight: 700;
-  color: #111111;
-  margin-bottom: 2px;
-  letter-spacing: 0.02em;
-}
-
-.footer-col-brand p.sub-org {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-
-/* Contact Information */
-.footer-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #333333;
-  opacity: 1;
-  margin-bottom: 8px;
-}
-
-.footer-contact-info a {
-  color: #007b9e;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-contact-info a:hover {
-  color: #005b78;
-  text-decoration: underline;
-}
-
-/* Social Media Icons */
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.social-icon-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #eaf5f8;
-  color: #007b9e;
-  display: grid;
-  place-items: center;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.social-icon-btn:hover {
-  background: #d5edf3;
-  transform: translateY(-2px);
-}
-
-.social-icon-btn svg {
-  width: 15px;
-  height: 15px;
-  fill: #007b9e;
-}
-
-/* Footer Columns */
-.footer-column h4 {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111111;
-  margin-bottom: 8px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dddddd;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.footer-column ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-column ul li a {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #333333;
-  opacity: 1;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-column ul li a:hover {
-  color: #007b9e;
-}
-
-/* Footer Bottom */
-.footer-bottom-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  color: #444444;
-  opacity: 1;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .footer-grid-multi {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .footer-col-brand {
-    grid-column: span 3;
-  }
-}
-
-@media (max-width: 600px) {
-  .site-footer {
-    padding: 20px 0 10px;
-  }
-
-  .footer-grid-multi {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 14px;
-    padding-bottom: 12px;
-  }
-
-  .footer-col-brand {
-    grid-column: span 2;
-  }
-
-  .footer-col-brand h3 {
-    font-size: 24px;
-  }
-
-  .footer-col-brand p.sub-org {
-    font-size: 13px;
-  }
-
-  .footer-contact-info {
-    font-size: 16px;
-  }
-
-  .footer-column h4 {
-    font-size: 15px;
-  }
-
-  .footer-column ul li a {
-    font-size: 12px;
-  }
-
-  .footer-bottom-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding-top: 10px;
-    font-size: 10.5px;
-  }
-}
-
     /* ==========================================================================
-       RESPONSIVE DESIGN (INCLUDING MOBILE MENU DRAWER)
+       COMPACT MULTI-COLUMN THEME FOOTER (HOMOGENOUS)
        ========================================================================== */
-    @media (max-width: 1100px) {
-      .initiatives-grid-3 {
+    .site-footer {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 30px 0 16px;
+      font-family: var(--font-serif);
+    }
+
+    .footer-grid-multi {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1.5px solid #cccccc;
+    }
+
+    .footer-col-brand h3 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col-brand p.sub-org {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-info a {
+      color: #007b9e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-contact-info a:hover {
+      color: #005b78;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .social-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eaf5f8;
+      color: #007b9e;
+      display: grid;
+      place-items: center;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-icon-btn:hover {
+      background: #d5edf3;
+      transform: translateY(-2px);
+    }
+
+    .social-icon-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: #007b9e;
+    }
+
+    .footer-column h4 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #cccccc;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #007b9e;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      opacity: 1;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .partners-grid-exact {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .donor-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .networks-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .footer-grid-multi {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .footer-col-brand {
+        grid-column: span 3;
       }
     }
 
@@ -856,7 +821,7 @@
         width: 100%;
         padding: 14px 0;
         justify-content: space-between;
-        font-size: 17px;
+        font-size: 20px;
       }
 
       .dropdown-menu {
@@ -881,75 +846,20 @@
         display: flex;
       }
 
-      .initiatives-grid-3 { grid-template-columns: 1fr; }
-      .completed-projects-grid { grid-template-columns: 1fr; }
+      .transform-grid { grid-template-columns: 1fr; }
+      .stats-outline-wrap { align-items: flex-start; }
+      .stat-outline-box { text-align: left; }
+      .partners-grid-exact { grid-template-columns: repeat(2, 1fr); }
+      .donors-header { flex-direction: column; gap: 20px; }
+      .donor-cards-grid { grid-template-columns: 1fr; }
+      .networks-grid { grid-template-columns: 1fr; }
       .support-banner-inner {
         flex-direction: column;
         text-align: center;
       }
       .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
-      .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
-      .accordion-content { padding-left: 20px; }
-    }
-
-    /* Page-Specific Custom Layout CSS */
-    .projects-main-hero {
-      position: relative;
-      height: 380px;
-      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      color: #ffffff;
-      overflow: hidden;
-    }
-
-    .projects-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(15, 18, 25, 0.9) 0%, rgba(20, 25, 35, 0.55) 45%, rgba(245, 175, 25, 0.6) 100%);
-    }
-
-    .projects-hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .projects-hero-dots {
-      font-size: 40px;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: 4px;
-    }
-
-    .section-header-wrap {
-      margin-bottom: 36px;
-    }
-
-    .section-kicker {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .section-kicker::before {
-      content: "°°";
-      color: var(--primary-blue);
-      font-weight: bold;
-    }
-
-    .section-main-title {
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 700;
-      color: var(--primary-blue);
-      line-height: 1.15;
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 18px; }
     }
   </style>
 </head>
@@ -1001,8 +911,8 @@
           </div>
         </div>
 
-               <div class="nav-item">
-          <a href="resources.html" class="dropdown-toggle">Resources <span class="arrow"></span></a>
+        <div class="nav-item">
+          <a href="publications.html" class="dropdown-toggle">Resources <span class="arrow"></span></a>
           <div class="dropdown-menu">
             <a href="publications.html">Publications</a>
             <a href="gallery.html">Media Library</a>
@@ -1208,9 +1118,8 @@
     </section>
   </main>
 
-
   <!-- ==========================================================================
-     7. MULTI-COLUMN THEME FOOTER (WITH SOCIAL ICONS & LARGER FONT)
+     MULTI-COLUMN THEME FOOTER (HOMOGENOUS)
      ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -1224,10 +1133,10 @@
             <span><a href="mailto:nzincnepal@gmail.com">nzincnepal@gmail.com</a></span>
           </div>
           <div class="social-links">
-            <a href="#" class="social-icon-btn" aria-label="Twitter">
+            <a href="https://x.com/NZINC_Nepal" class="social-icon-btn" aria-label="Twitter">
               <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/p/Nepal-Zebra-Fish-In-Nature-Center-NZINC-61596320360359/" class="social-icon-btn" aria-label="Facebook">
               <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="#" class="social-icon-btn" aria-label="Instagram">
@@ -1278,7 +1187,7 @@
             <li><a href="donate.html">Donate</a></li>
             <li><a href="contact.html#volunteer">Become a Volunteer</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="resources.html">Resources</a></li>
+            <li><a href="publications.html">Resources</a></li>
           </ul>
         </div>
       </div>
@@ -1286,12 +1195,12 @@
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
-        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+        <div style="opacity: 1;">Dedicated to Nature, Community, and Well-being.</div>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts: Mobile Navigation Toggle + Accordions -->
+  <!-- Scripts: Mobile Navigation Toggle -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -1310,14 +1219,6 @@
           const parentItem = toggle.closest('.nav-item');
           parentItem.classList.toggle('open');
         }
-      });
-    });
-
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        item.classList.toggle('active');
       });
     });
   </script>
