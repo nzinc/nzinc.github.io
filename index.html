@@ -6,10 +6,10 @@
   <meta name="description" content="Nepal Zebra fish in Nature Center">
   <title>Nepal Zebra fish in Nature Center</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cormorant Garamond (Serif Headers/Titles) & Plus Jakarta Sans (Clean Sans-Serif Body/Minor Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
@@ -20,14 +20,14 @@
       --primary-hover: #120b8a;
       --cyan-accent: #00b4d8;
       --cyan-light: #e6f7f9;
-      --text-dark: #111418;
-      --text-body: #111418;
-      --text-muted: #73777f;
+      --text-dark: #000000;
+      --text-body: #000000;
+      --text-muted: #111111;
       --bg-light: #f8f9fa;
       --bg-card: #ffffff;
       --border-color: #e2e5ec;
       --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --max-width: 1380px;
     }
 
@@ -38,6 +38,7 @@
       color: var(--text-dark);
       background-color: #fcfdfe;
       line-height: 1.6;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -100,7 +101,7 @@
 
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 700;
       color: #1b12b2;
       letter-spacing: 0.02em;
@@ -124,9 +125,9 @@
     }
 
     .nav-item > a {
-      color: #2b2b2b;
+      color: #000000;
       font-family: var(--font-serif);
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -142,11 +143,11 @@
 
     .nav-item > a span.arrow {
       font-size: 10px;
-      color: #555555;
+      color: #000000;
       transform: translateY(1px);
     }
 
-    /* Dropdown Menu Styles */
+    /* Dropdown Menu Styles (Using Cormorant Garamond / Serif) */
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -181,10 +182,10 @@
     }
 
     .dropdown-menu a {
-      color: #f1f1f1;
-      font-family: var(--font-main);
-      font-size: 14px;
-      font-weight: 400;
+      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
       line-height: 1.3;
       transition: color 0.2s ease;
       white-space: nowrap;
@@ -278,12 +279,14 @@
     }
 
     .hero h1 {
-      font-size: clamp(24px, 5.5vw, 60px);
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5.5vw, 64px);
       font-weight: 700;
       line-height: 1.1;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       margin-bottom: 24px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     .hero-controls {
@@ -331,13 +334,16 @@
     }
 
     .section-kicker {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
       display: flex;
       align-items: center;
       gap: 8px;
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .section-kicker::before {
@@ -346,19 +352,22 @@
     }
 
     .about-title {
-      font-size: clamp(32px, 4vw, 52px);
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 56px);
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.15;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       margin-bottom: 30px;
     }
 
     .about-text {
-      font-size: 15px;
-      color: var(--text-body);
-      line-height: 1.85;
+      font-family: var(--font-main);
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.8;
       margin-bottom: 24px;
+      font-weight: 400;
     }
 
     .btn-rounded-outline {
@@ -368,9 +377,10 @@
       padding: 12px 36px;
       border: 1.5px solid var(--cyan-accent);
       border-radius: 0px;
-      color: var(--text-dark);
+      color: #000000;
       background: #ffffff;
-      font-size: 14px;
+      font-family: var(--font-main);
+      font-size: 15px;
       font-weight: 600;
       transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
       box-shadow: 0 4px 15px rgba(0,0,0,0.02);
@@ -400,12 +410,14 @@
       right: -30px;
       bottom: 90px;
       transform: rotate(-90deg);
+      font-family: var(--font-serif);
       font-size: 72px;
-      font-weight: 800;
-      color: var(--primary-blue);
-      opacity: 0.9;
+      font-weight: 700;
+      color: #ffffff;
+      opacity: 0.95;
       pointer-events: none;
       letter-spacing: -0.02em;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
     /* ==========================================================================
@@ -422,7 +434,8 @@
     }
 
     .pillars-header h2 {
-      font-size: clamp(32px, 4.5vw, 54px);
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.5vw, 58px);
       color: var(--primary-blue);
       font-weight: 700;
       line-height: 1.15;
@@ -464,7 +477,8 @@
     }
 
     .pillar-title {
-      font-size: 19px;
+      font-family: var(--font-serif);
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.35;
@@ -472,9 +486,11 @@
     }
 
     .pillar-desc {
-      font-size: 14px;
-      color: var(--text-body, #475569);
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #000000;
       line-height: 1.7;
+      font-weight: 400;
     }
 
     /* ==========================================================================
@@ -506,7 +522,8 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 14px;
+      font-family: var(--font-main);
+      font-size: 16px;
       font-weight: 600;
       cursor: pointer;
       border-radius: 4px;
@@ -546,7 +563,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-
     .news-image-wrap {
       position: relative;
       height: 220px;
@@ -560,7 +576,6 @@
       transition: transform 0.4s ease;
     }
 
-
     .news-content {
       padding: 24px;
       display: flex;
@@ -569,9 +584,10 @@
     }
 
     .news-date {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--cyan-accent);
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 700;
+      color: #008fa8;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 8px;
@@ -581,7 +597,8 @@
     }
 
     .news-title {
-      font-size: 18px;
+      font-family: var(--font-serif);
+      font-size: 21px;
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.35;
@@ -589,22 +606,26 @@
     }
 
     .news-excerpt {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.6;
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #000000;
+      line-height: 1.65;
       margin-bottom: 20px;
       flex-grow: 1;
+      font-weight: 400;
     }
 
     .news-link {
+      font-family: var(--font-main);
       color: var(--primary-blue);
       font-weight: 700;
-      font-size: 14px;
+      font-size: 15px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       transition: color 0.2s ease;
     }
+
     /* ==========================================================================
        PROJECTS SECTION
        ========================================================================== */
@@ -642,7 +663,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.88) 100%);
     }
 
     .project-card-content {
@@ -651,23 +672,29 @@
     }
 
     .project-card-content h3 {
-      font-size: 22px;
+      font-family: var(--font-serif);
+      font-size: 24px;
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .project-card-content p {
-      font-size: 13px;
-      opacity: 0.95;
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: #ffffff;
+      opacity: 1;
       line-height: 1.6;
       margin-bottom: 16px;
+      font-weight: 400;
     }
 
     .project-card-content a {
-      color: #00b4d8;
+      font-family: var(--font-main);
+      color: #85e8ff;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 15px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -696,22 +723,25 @@
     }
 
     .volunteer-title {
-      font-size: clamp(40px, 6vw, 76px);
-      font-weight: 800;
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 700;
       color: #0b0bbd;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
       margin-bottom: 24px;
       line-height: 1.05;
     }
 
     .volunteer-desc {
-      font-size: 16px;
-      color: #4a4e54;
+      font-family: var(--font-main);
+      font-size: 17px;
+      color: #000000;
       line-height: 1.85;
       margin-bottom: 40px;
       max-width: 740px;
       margin-left: auto;
       margin-right: auto;
+      font-weight: 400;
     }
 
     /* ==========================================================================
@@ -724,11 +754,12 @@
     }
 
     .partners-title {
-      font-size: clamp(28px, 3.5vw, 44px);
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 3.5vw, 48px);
       color: var(--primary-blue);
       font-weight: 700;
       margin-bottom: 50px;
-      max-width: 440px;
+      max-width: 480px;
       line-height: 1.2;
     }
 
@@ -760,9 +791,10 @@
     }
 
     .partner-name {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text-dark);
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
     }
 
     /* ==========================================================================
@@ -783,9 +815,9 @@
     }
 
     .support-heading-text {
-      font-size: clamp(45px, 6.5vw, 96px);
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 6.5vw, 100px);
       font-weight: 400;
-      font-family: var(--font-main);
       color: #ffffff;
       letter-spacing: -0.02em;
       line-height: 1.05;
@@ -807,8 +839,9 @@
       align-items: center;
       justify-content: center;
       color: #ffffff;
+      font-family: var(--font-main);
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       flex-shrink: 0;
       transition: background 0.3s ease;
     }
@@ -818,49 +851,51 @@
     }
 
     /* ==========================================================================
-       7. COMPACT MULTI-COLUMN THEME FOOTER
+       7. COMPACT MULTI-COLUMN THEME FOOTER (REMOTE GARAMOND SCRIPT & INCREASED SIZE)
        ========================================================================== */
     .site-footer {
       background-color: #ffffff;
-      color: #222222;
-      padding: 22px 0 10px;
-      font-family: var(--font-main);
+      color: #000000;
+      padding: 30px 0 16px;
+      font-family: var(--font-serif);
     }
 
     .footer-grid-multi {
       display: grid;
       grid-template-columns: 1.5fr repeat(4, 1fr);
-      gap: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #dddddd;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1.5px solid #cccccc;
     }
 
     .footer-col-brand h3 {
       font-family: var(--font-serif);
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 700;
-      color: #111111;
-      margin-bottom: 2px;
+      color: #000000;
+      margin-bottom: 4px;
       letter-spacing: 0.02em;
     }
 
     .footer-col-brand p.sub-org {
-      font-size: 14px;
+      font-family: var(--font-serif);
+      font-size: 18px;
       font-weight: 600;
-      color: #333333;
-      margin-bottom: 8px;
+      color: #000000;
+      margin-bottom: 12px;
       line-height: 1.4;
     }
 
     .footer-contact-info {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      font-size: 12px;
+      gap: 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
       font-weight: 500;
-      color: #333333;
+      color: #000000;
       opacity: 1;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .footer-contact-info a {
@@ -877,13 +912,13 @@
     .social-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 6px;
+      gap: 10px;
+      margin-top: 8px;
     }
 
     .social-icon-btn {
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: #eaf5f8;
       color: #007b9e;
@@ -898,18 +933,19 @@
     }
 
     .social-icon-btn svg {
-      width: 15px;
-      height: 15px;
+      width: 17px;
+      height: 17px;
       fill: #007b9e;
     }
 
     .footer-column h4 {
-      font-size: 13px;
+      font-family: var(--font-serif);
+      font-size: 19px;
       font-weight: 700;
-      color: #111111;
-      margin-bottom: 8px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #dddddd;
+      color: #000000;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #cccccc;
       letter-spacing: 0.03em;
       text-transform: uppercase;
     }
@@ -918,15 +954,16 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       margin: 0;
       padding: 0;
     }
 
     .footer-column ul li a {
-      font-size: 12.5px;
+      font-family: var(--font-serif);
+      font-size: 17px;
       font-weight: 500;
-      color: #333333;
+      color: #000000;
       opacity: 1;
       text-decoration: none;
       transition: color 0.2s ease;
@@ -940,13 +977,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 10px;
-      font-size: 11px;
+      padding-top: 14px;
+      font-family: var(--font-serif);
+      font-size: 16px;
       font-weight: 500;
-      color: #444444;
+      color: #000000;
       opacity: 1;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
 
     /* Responsive Design */
@@ -1013,7 +1051,7 @@
         width: 100%;
         padding: 14px 0;
         justify-content: space-between;
-        font-size: 17px;
+        font-size: 20px;
       }
 
       .dropdown-menu {
@@ -1047,7 +1085,7 @@
       }
       .footer-grid-multi { grid-template-columns: 1fr; gap: 30px; }
       .footer-bottom-bar { flex-direction: column; text-align: center; gap: 15px; }
-      .donate-oval-btn { width: 140px; height: 140px; font-size: 16px; }
+      .donate-oval-btn { width: 140px; height: 140px; font-size: 18px; }
     }
   </style>
 </head>
@@ -1156,7 +1194,7 @@
         <div class="hero-slide" style="background-image: url('Image/zebra2.avif');">
           <div class="hero-overlay"></div>
           <div class="container hero-content">
-  <h1>Understanding Zebrafish Diversity and <br>Conserving Their Natural Habitats.</h1>
+            <h1>Understanding Zebrafish Diversity and <br>Conserving Their Natural Habitats.</h1>
           </div>
         </div>
 
@@ -1164,7 +1202,7 @@
         <div class="hero-slide" style="background-image: url('Image/zebra3.webp');">
           <div class="hero-overlay"></div>
           <div class="container hero-content">
-        <h1>Discovering Native Zebrafish Diversity and <br>Understanding Their Ecological Adaptations.</h1>
+            <h1>Discovering Native Zebrafish Diversity and <br>Understanding Their Ecological Adaptations.</h1>
           </div>
         </div>
       </div>
@@ -1260,7 +1298,7 @@
     </section>
 
     <!-- ==========================================================================
-       RECENT NEWS SECTION (NEWLY ADDED ABOVE ONGOING PROJECTS)
+       RECENT NEWS SECTION (3 CARDS IN A ROW)
        ========================================================================== -->
     <section class="recent-news-section">
       <div class="container">
@@ -1282,7 +1320,7 @@
               <a href="news.html" class="news-link">Read Full Story ↗</a>
             </div>
           </article>
-         <!-- News Card 3 -->
+         <!-- News Card 2 -->
           <article class="news-card">
             <a href="news.html" class="news-image-wrap">
               <img src="Image/dukenzinc.png" alt="Community Agriculture Resilience Initiative">
@@ -1294,7 +1332,7 @@
               <a href="news.html" class="news-link">Read Full Story ↗</a>
             </div>
           </article>
-          <!-- News Card 2 -->
+          <!-- News Card 3 -->
           <article class="news-card">
             <a href="news.html" class="news-image-wrap">
               <img src="Image/NZINC Nepal Nature Center Banner.png" alt="Molecular Diagnostics Workshop">
@@ -1306,8 +1344,6 @@
               <a href="news.html" class="news-link">Read Full Story ↗</a>
             </div>
           </article>
-
- 
         </div>
       </div>
     </section>
@@ -1417,7 +1453,7 @@
   </main>
 
   <!-- ==========================================================================
-     7. MULTI-COLUMN THEME FOOTER (WITH SOCIAL ICONS & LARGER FONT)
+     7. MULTI-COLUMN THEME FOOTER (FULL CORMORANT GARAMOND & INCREASED FONT SIZES)
      ========================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -1493,7 +1529,7 @@
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>© 2026 Nepal Zebrafish in Nature Center (NZINC). All rights reserved.</div>
-        <div style="opacity: 0.9;">Dedicated to Nature, Community, and Well-being.</div>
+        <div style="opacity: 1;">Dedicated to Nature, Community, and Well-being.</div>
       </div>
     </div>
   </footer>
