@@ -864,6 +864,7 @@
   
     /* Touch/mobile devices: bigger navigation bar (desktop/laptop unchanged) */
     @media (hover: none) and (pointer: coarse) {
+      html, body { overflow-x: hidden; }
       .header-inner { height: 110px; }
       .brand-section { padding: 0 24px; gap: 14px; flex-shrink: 0; white-space: nowrap; }
       .brand-logo-wrap { gap: 14px; }
