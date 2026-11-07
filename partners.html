@@ -864,17 +864,18 @@
   
     /* Touch/mobile devices: bigger navigation bar (desktop/laptop unchanged) */
     @media (hover: none) and (pointer: coarse) {
-      .header-inner { height: 130px; }
-      .brand-section { padding: 0 40px; gap: 24px; }
-      .brand-duke-logo { width: 80px; height: 80px; }
-      .brand-title { font-size: 40px; }
-      .nav-links { gap: 52px; }
-      .nav-item > a { font-size: 32px; gap: 10px; }
-      .nav-item > a span.arrow { font-size: 16px; }
-      .dropdown-menu { min-width: 300px; padding: 32px 36px; gap: 24px; }
-      .dropdown-menu a { font-size: 28px; }
-      .header-right { padding: 0 40px; }
-      .nav-search-btn svg { width: 36px; height: 36px; }
+      .header-inner { height: 110px; }
+      .brand-section { padding: 0 24px; gap: 14px; flex-shrink: 0; white-space: nowrap; }
+      .brand-logo-wrap { gap: 14px; }
+      .brand-duke-logo { width: 64px; height: 64px; flex-shrink: 0; }
+      .brand-title { font-size: 34px; }
+      .nav-links { gap: 30px; flex-wrap: nowrap; min-width: 0; }
+      .nav-item > a { font-size: 26px; gap: 8px; white-space: nowrap; }
+      .nav-item > a span.arrow { font-size: 13px; }
+      .dropdown-menu { min-width: 260px; padding: 28px 30px; gap: 20px; }
+      .dropdown-menu a { font-size: 24px; }
+      .header-right { padding: 0 28px; flex-shrink: 0; }
+      .nav-search-btn svg { width: 32px; height: 32px; }
     }
   </style>
 </head>
