@@ -606,130 +606,41 @@
     }
 
     /* ==========================================================================
-       SUSTAINABLE DEVELOPMENT GOALS (SDG) INTERACTIVE WHEEL SECTION
+       SUSTAINABLE DEVELOPMENT GOALS (SDG) IMAGE SECTION
        ========================================================================== */
     .sdg-section {
-      padding: 100px 0 120px;
+      padding: 80px 0 100px;
       background-color: #ffffff;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .sdg-container {
-      position: relative;
-      max-width: 1280px;
+      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      padding: 0 20px;
     }
 
-    .sdg-wheel-wrapper {
-      position: relative;
+    .sdg-image-wrapper {
       width: 100%;
-      max-width: 1050px;
-      min-height: 750px;
+      max-width: 950px;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .sdg-svg {
-      width: 520px;
-      height: 520px;
-      transform: rotate(-90deg);
-    }
-
-    .sdg-segment {
-      cursor: pointer;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .sdg-segment:hover {
-      opacity: 0.85;
-      filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
-    }
-
-    .sdg-center-badge {
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      z-index: 5;
-      padding: 10px;
     }
 
-    .sdg-center-badge img {
-      width: 75px;
+    .sdg-full-image {
+      width: 100%;
       height: auto;
-      margin-bottom: 4px;
-    }
-
-    .sdg-center-text {
-      font-family: var(--font-main);
-      font-size: 9px;
-      font-weight: 800;
-      color: #0077b6;
-      letter-spacing: 0.05em;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    .sdg-nzinc-sub {
-      font-family: var(--font-serif);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--primary-blue);
-      margin-top: 4px;
-    }
-
-    .sdg-callout {
-      position: absolute;
-      font-family: var(--font-main);
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.25;
-      max-width: 190px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      pointer-events: none;
-    }
-
-    .c-top-right-1 { top: 30px; right: 180px; color: #e5243b; text-align: left; }
-    .c-top-right-2 { top: 110px; right: 80px; color: #dda63a; text-align: left; }
-    .c-mid-right-1 { top: 220px; right: 40px; color: #4c9f38; text-align: left; }
-    .c-mid-right-2 { top: 350px; right: 30px; color: #ff3a21; text-align: left; }
-    .c-mid-right-3 { top: 480px; right: 50px; color: #26bde2; text-align: left; }
-    .c-bot-right-1 { bottom: 120px; right: 100px; color: #fcc30b; text-align: left; }
-    .c-bot-right-2 { bottom: 40px; right: 180px; color: #a21942; text-align: left; }
-    .c-bottom-center { bottom: 0px; left: 50%; transform: translateX(-50%); color: #fd6925; text-align: center; }
-    .c-bot-left-1 { bottom: 50px; left: 160px; color: #dd1367; text-align: right; }
-    .c-bot-left-2 { bottom: 130px; left: 90px; color: #fd9d24; text-align: right; }
-    .c-mid-left-1 { top: 480px; left: 40px; color: #bf8b2e; text-align: right; }
-    .c-mid-left-2 { top: 360px; left: 30px; color: #3f7e44; text-align: right; }
-    .c-mid-left-3 { top: 230px; left: 50px; color: #0a97d9; text-align: right; }
-    .c-top-left-1 { top: 120px; left: 80px; color: #56c02b; text-align: right; }
-    .c-top-left-2 { top: 40px; left: 170px; color: #00689d; text-align: right; }
-
-    .sdg-info-box {
-      margin-top: 20px;
-      padding: 16px 28px;
-      background: #f8fafc;
-      border-radius: 30px;
-      border: 1px solid var(--border-color);
-      font-family: var(--font-main);
-      font-size: 14px;
-      color: #000000;
-      font-weight: 600;
-      text-align: center;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.08));
+      border-radius: 12px;
     }
 
     /* ==========================================================================
@@ -1264,7 +1175,16 @@
         </div>
       </div>
     </section>
-
+   <!-- ==========================================================================
+       SUSTAINABLE DEVELOPMENT GOALS (SDG) IMAGE SECTION
+       ========================================================================== -->
+    <section class="sdg-section" id="sdgs">
+      <div class="container sdg-container">
+        <div class="sdg-image-wrapper">
+          <img src="Image/NZINCSDG.png" alt="NZINC Sustainable Development Goals Wheel" class="sdg-full-image">
+        </div>
+      </div>
+    </section>
     <!-- ==========================================================================
        TARGET GROUP SECTION
        ========================================================================== -->
@@ -1349,49 +1269,7 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-       SUSTAINABLE DEVELOPMENT GOALS (SDG) INTERACTIVE WHEEL SECTION
-       ========================================================================== -->
-    <section class="sdg-section" id="sdgs">
-      <div class="container sdg-container">
-        
-        <div class="sdg-wheel-wrapper">
-          <div class="sdg-center-badge">
-            <svg width="42" height="42" viewBox="0 0 100 100" fill="#0077b6">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#0077b6" stroke-width="3"/>
-              <circle cx="50" cy="50" r="30" fill="none" stroke="#0077b6" stroke-width="2"/>
-              <line x1="50" y1="5" x2="50" y2="95" stroke="#0077b6" stroke-width="2"/>
-              <line x1="5" y1="50" x2="95" y2="50" stroke="#0077b6" stroke-width="2"/>
-              <path d="M 20 50 A 30 30 0 0 0 80 50" fill="none" stroke="#0077b6" stroke-width="3"/>
-            </svg>
-            <div class="sdg-center-text">SUSTAINABLE<br>DEVELOPMENT<br><strong>GOALS</strong></div>
-            <div class="sdg-nzinc-sub">NZINC 2026</div>
-          </div>
-
-          <svg class="sdg-svg" viewBox="0 0 500 500" id="sdgWheel"></svg>
-
-          <div class="sdg-callout c-top-right-1">485698 HOUSEHOLDS AND 2 MILLION PEOPLE</div>
-          <div class="sdg-callout c-top-right-2">460 RURAL COOPS. &amp; 1500 BILLION CAPITAL GENERATE</div>
-          <div class="sdg-callout c-mid-right-1">EDUCATION: 150 HHS</div>
-          <div class="sdg-callout c-mid-right-2">15000 YOUTH SELF-EMPLOYMENT</div>
-          <div class="sdg-callout c-mid-right-3">1300 HHS: HEALTH &amp; NUTRITION</div>
-          <div class="sdg-callout c-bot-right-1">21 HOUSE SUPPORT FOR BOTE COMMUNITY</div>
-          <div class="sdg-callout c-bot-right-2">SOLAR: 2100 HHS</div>
-          <div class="sdg-callout c-bottom-center">60 CFUGS, 46 PRIVATE FOREST, 80 AGRI-FOREST, 50 PUBLIC LAND</div>
-          <div class="sdg-callout c-bot-left-1">1660000 TREE PLANTATION</div>
-          <div class="sdg-callout c-bot-left-2">10237 ICS &amp; 2104 BIO-GAS</div>
-          <div class="sdg-callout c-mid-left-1">DRR/RESILINCY: 7000 HHS</div>
-          <div class="sdg-callout c-mid-left-2">LAND OWNERSHIP FACILITATION 350 HHS</div>
-          <div class="sdg-callout c-mid-left-3">4200 HAC FOREST PROMOTION</div>
-          <div class="sdg-callout c-top-left-1">10 GROUND WATER RECHARGE</div>
-          <div class="sdg-callout c-top-left-2">RED TIKA MOVEMENT: 100 HHS</div>
-        </div>
-
-        <div class="sdg-info-box" id="sdgInfoBox">
-          Hover over or click any SDG segment to view NZINC's targeted community contributions.
-        </div>
-      </div>
-    </section>
+ 
 
     <!-- ==========================================================================
        SUPPORT / CONTRIBUTE / DONATE BANNER
