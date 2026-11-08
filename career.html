@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1280">
-  <meta name="description" content="Careers & Opportunities - Nepal Zebrafish in Nature Center (NZINC)">
-  <title>Careers & Opportunities - NZINC</title>
+  <meta name="description" content="Contact Us - Nepal Zebrafish in Nature Center (NZINC)">
+  <title>Contact Us - NZINC</title>
   
   <!-- Google Fonts: Cormorant Garamond (Serif Headers/Titles) & Plus Jakarta Sans (Clean Sans-Serif Body/Minor Text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -280,7 +280,7 @@
     }
 
     .section-kicker {
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       font-size: 14px;
       font-weight: 700;
       color: #000000;
@@ -356,7 +356,7 @@
     }
 
     .opportunity-desc {
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       font-size: 16px;
       color: #000000;
       line-height: 1.6;
@@ -374,11 +374,11 @@
       justify-content: center;
       gap: 8px;
       padding: 12px 36px;
-      border: 1.5px solid var(--cyan-accent);
+      border: 1.5px solid var(--font-serif);
       border-radius: 0px;
       color: #000000;
       background: #ffffff;
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       font-size: 15px;
       font-weight: 600;
       transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -434,7 +434,7 @@
       align-items: center;
       justify-content: center;
       color: #ffffff;
-      font-family: var(--font-main);
+      font-family: var(--font-serif);
       font-size: 18px;
       font-weight: 600;
       flex-shrink: 0;
@@ -583,7 +583,7 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 992px) {
+    @media (max-width: 0px) {
       .footer-grid-multi {
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -594,7 +594,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 0px) {
       .container { width: calc(100% - 32px); }
       .header-inner { justify-content: space-between; padding: 0 16px; }
       
@@ -813,13 +813,13 @@
           
           <!-- Proposal Item 1 -->
           <div class="opportunity-row">
-            <div class="opportunity-type">Call for Proposal</div>
+            <div class="opportunity-type">Call for Collaborators</div>
             <div class="opportunity-detail">
               <div class="check-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
               <p class="opportunity-desc">
-                Capacity need assessment of stakeholders including duty bearers and service holders
+                Assessment of Zebrafish diversity and water quality in Chitwan, Nepal
               </p>
             </div>
             <div class="action-btn-wrap">
@@ -835,7 +835,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </div>
               <p class="opportunity-desc">
-                Conducting Water Sources and Water Bodies Inventory in Kandra and Kateni Sub - Watersheds of Kailali
+                Georefrencing of Waterbodies for Zebrafish locations
               </p>
             </div>
             <div class="action-btn-wrap">
@@ -974,7 +974,7 @@
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 0) {
           e.preventDefault();
           const parentItem = toggle.closest('.nav-item');
           parentItem.classList.toggle('open');
